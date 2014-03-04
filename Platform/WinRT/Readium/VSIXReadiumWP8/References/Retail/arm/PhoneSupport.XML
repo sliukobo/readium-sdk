@@ -1,0 +1,1437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PhoneSupport</name>
+    </assembly>
+    <members>
+        <member name="T:ReadiumPhoneSupport.XmlAttribute">
+            <summary>
+            Represents an attribute of an XmlElement. Valid and default values for
+            the attribute are defined in a document type definition (DTD) or schema.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.AppendChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+            <param name="newNode">The new child node to be appended to the end of the list of children of this node.</param>
+            <returns>The new child node successfully appended to the list. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.CloneNode(System.Boolean)">
+            <summary>
+            Clones a new node.
+            </summary>
+            <param name="deep">A flag that indicates whether to recursively clone all nodes
+            that are descendants of this node. If true, this method creates a clone of the
+            complete tree below this node. If false, this method clones this node and its
+            attributes only.</param>
+            <returns>The newly created clone node.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.HasChildNodes">
+            <summary>
+            Determines whether a node has children.
+            </summary>
+            <returns>Attributes never have children; always returns false.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.InsertBefore(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+            <param name="newChild">The address of the new node to be inserted. The node passed
+            here must be a valid child of the current XML DOM document node. For example, if
+            the current node is an attribute, you cannot pass another attribute in the newChild
+            parameter, because an attribute cannot have an attribute as a child. If newChild
+            is a DOCUMENT_FRAGMENT node type, all its children are inserted in order before 
+            referenceChild. If newChild is already in the tree, it is first removed before it
+            is reinserted before the referenceChild node. Read-only nodes, such as 
+            NODE_DOCUMENT_TYPE and NODE_ENTITY nodes, cannot be passed in the newChild 
+            parameter.</param>
+            <param name="referenceNode">The reference node. The node specified is where the 
+            newChild node is to be inserted to the left as the preceding sibling in the child
+            list. The node passed here must be a either a child node of the current node or
+            null. If the value is null, the newChild node is inserted at the end of the child
+            list. If the referenceChild node is not a child of the current node, an error is
+            returned.</param>
+            <returns>On success, the child node that was inserted. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.Normalize">
+            <summary>
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.RemoveChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+            <param name="childNode">The node to remove.</param>
+            <returns>The node that was removed. If null, no changes were made.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.ReplaceChild(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+            <param name="newChild">The replacement node.</param>
+            <param name="referenceChild">The child node to be replaced.</param>
+            <returns>The node that was replaced. If null, no changes were made.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.SelectNodes(System.String)">
+            <summary>
+            This property is not applicable to this class and will always return null.
+            </summary>
+            <returns>NULL.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.SelectNodesNS(System.String,System.Object)">
+            <summary>
+            This property is not applicable to this class and will always return null.
+            </summary>
+            <returns>NULL.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.SelectSingleNode(System.String)">
+            <summary>
+            This property is not applicable to this class and will always return null.
+            </summary>
+            <returns>NULL</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.SelectSingleNodeNS(System.String,System.Object)">
+            <summary>
+            This property is not applicable to this class and will always return null.
+            </summary>
+            <returns>NULL</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlAttribute.GetXml">
+            <summary>
+            Returns the XML representation of the node and all its descendants.
+            </summary>
+            <returns>The XML representation of the node and all its descendants.</returns>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.Name">
+            <summary>
+            Returns the attribute name.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.Specified">
+            <summary>
+            Gets a value that indicates whether the attribute is explicitly specified
+            or derived from a default value in the document type definition (DTD) or schema.
+            
+            In our implementation, we are unable to determine this, since Xml.Linq eats all
+            such information.
+            </summary>
+            <result>Always returns true.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.Value">
+            <summary>
+            Gets or sets the attribute value.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.OwnerDocument">
+            <summary>
+            Returns the root of the document that contains the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.ParentNode">
+            <summary>
+            The element to which this attribute belongs.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.Attributes">
+            <summary>
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.ChildNodes">
+            <summary>
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.FirstChild">
+            <summary>
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.LastChild">
+            <summary>
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.LocalName">
+            <summary>
+            Gets the local name, which is the local part of a qualified name.
+            This is called the local part in Namespaces in XML.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.Prefix">
+            <summary>
+            Gets or sets the namespace prefix.
+            </summary>
+            <result>The namespace prefix specified on the attribute. For example,
+            for the attribute xxx:yyy="zzz", this property returns xxx. It returns
+            an empty string, "", if no prefix is specified.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.NamespaceUri">
+            <summary>
+            Returns the Uniform Resource Identifier (URI) for the namespace.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.NodeName">
+            <summary>
+            Returns the qualified name for attribute, document type, element, entity,
+            or notation nodes. Returns a fixed string for all other node types.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.NodeType">
+            <summary>
+            Gets the XML Document Object Model (DOM) node type, which determines valid
+            values and whether the node can have child nodes.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.NodeValue">
+            <summary>
+            Gets or sets the text associated with the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.NextSibling">
+            <summary>
+            This property is not applicable to this class and will always return null.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.PreviousSibling">
+            <summary>
+            This property is not applicable to this class and will always return null.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlAttribute.InnerText">
+            <summary>
+            Gets the text from inside the XML.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.SplitText(System.UInt32)">
+            <summary>
+            Splits this text node into two text nodes at the specified offset
+            and inserts the new text node into the tree as a sibling that
+            immediately follows this node.
+            </summary>
+            <param name="offset">The number of characters at which to split this
+            text node into two nodes, starting from zero.</param>
+            <returns>The new text node.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.AppendData(System.String)">
+            <summary>
+            Appends the supplied string to the existing string data.
+            </summary>
+            <param name="data">The data to be appended to the existing string.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.DeleteData(System.UInt32,System.UInt32)">
+            <summary>
+            Deletes specified data.
+            </summary>
+            <param name="offset">The offset, in characters, at which to start deleting the string data.</param>
+            <param name="count">The number of characters to delete.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.InsertData(System.UInt32,System.String)">
+            <summary>
+            Inserts a string at the specified offset.
+            </summary>
+            <param name="offset">The offset, in characters, at which to insert the supplied string data.</param>
+            <param name="data">The data to be inserted into the existing string.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.ReplaceData(System.UInt32,System.UInt32,System.String)">
+            <summary>
+            Replaces the specified number of characters with the supplied string.
+            </summary>
+            <param name="offset">The offset, in characters, at which to start replacing string data.</param>
+            <param name="count">The number of characters to replace.</param>
+            <param name="data">The new data that replaces the old string data.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.SubstringData(System.UInt32,System.UInt32)">
+            <summary>
+            Retrieves a substring of the full string from the specified range.
+            </summary>
+            <param name="offset">Specifies the offset, in characters, from the beginning of the string.
+            An offset of zero indicates copying from the start of the data.</param>
+            <param name="count">Specifies the number of characters to retrieve from the specified offset.</param>
+            <returns>The returned substring.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.AppendChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class. The CDataSection does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.CloneNode(System.Boolean)">
+            <summary>
+            Clones a new node.
+            </summary>
+            <param name="deep">A flag that indicates whether to recursively clone all nodes
+            that are descendants of this node. If true, this method creates a clone of the
+            complete tree below this node. If false, this method clones this node and its
+            attributes only.</param>
+            <returns>The cloned node.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.HasChildNodes">
+            <summary>
+            Determines whether a node has children. The CDataSection does not have children.
+            This method always returns false.
+            </summary>
+            <returns>False</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.InsertBefore(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Inserts a child node to the left of the specified node, or at the end of the child node list.
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.Normalize">
+            <summary>
+            Normalizes all descendant elements by combining two or more adjacent text nodes
+            into one unified text node.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.RemoveChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class. The CDataSection does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.ReplaceChild(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class. The CDataSection does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.SelectNodes(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context
+            and returns the list of matching nodes as an XmlNodeList. This method is
+            not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.SelectNodesNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context
+            and returns the list of matching nodes as an XmlNodeList. This method is
+            not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.SelectSingleNode(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context
+            and returns the list of matching nodes as an XmlNodeList. This method is
+            not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.SelectSingleNodeNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context
+            and returns the list of matching nodes as an XmlNodeList. This method is
+            not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlCDataSection.GetXml">
+            <summary>
+            Returns the XML representation of the node and all its descendants.
+            </summary>
+            <returns>The XML representation of the node and all its descendants.</returns>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.Data">
+            <summary>
+            Gets or sets the node data depending on the node type.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.Length">
+            <summary>
+            Gets the length of the data, in Unicode characters.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.OwnerDocument">
+            <summary>
+            Returns the root of the document that contains the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.ParentNode">
+            <summary>
+            Gets the parent node of the node instance.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.Attributes">
+            <summary>
+            Gets the list of attributes of this node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.ChildNodes">
+            <summary>
+            Gets a list of children in the current node. This property always returns NULL.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.FirstChild">
+            <summary>
+            Gets the first child node. This property always returns NULL.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.LastChild">
+            <summary>
+            Gets the last child node. This property always returns NULL.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.LocalName">
+            <summary>
+            This method is not applicable to this class. The CDataSection does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.Prefix">
+            <summary>
+            This method is not applicable to this class. The CDataSection does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.NamespaceUri">
+            <summary>
+            This method is not applicable to this class. The CDataSection does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.NodeName">
+            <summary>
+            Returns the qualified name for attribute, document type, element, entity, or notation nodes.
+            Returns a fixed string for all other node types.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.NodeType">
+            <summary>
+            Gets the XML Document Object Model (DOM) node type, which determines valid values and whether
+            the node can have child nodes.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.NodeValue">
+            <summary>
+            Gets or sets the text associated with the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.NextSibling">
+            <summary>
+            Gets the next sibling of the node in the parent's child list.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlCDataSection.PreviousSibling">
+            <summary>
+            Gets the previous sibling of the node in the parent's child list.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.AppendData(System.String)">
+            <summary>
+            Appends the supplied string to the existing string data.
+            </summary>
+            <param name="data">The data to be appended to the existing string.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.DeleteData(System.UInt32,System.UInt32)">
+            <summary>
+            Deletes specified data.
+            </summary>
+            <param name="offset">The offset, in characters, at which to start deleting the string data.</param>
+            <param name="count">The number of characters to delete.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.InsertData(System.UInt32,System.String)">
+            <summary>
+            Inserts a string at the specified offset.
+            </summary>
+            <param name="offset">The offset, in characters, at which to insert the supplied string data.</param>
+            <param name="data">The data to be inserted into the existing string.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.ReplaceData(System.UInt32,System.UInt32,System.String)">
+            <summary>
+            Replaces the specified number of characters with the supplied string.
+            </summary>
+            <param name="offset">The offset, in characters, at which to start replacing string data.</param>
+            <param name="count">The number of characters to replace.</param>
+            <param name="data">The new data that replaces the old string data.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.SubstringData(System.UInt32,System.UInt32)">
+            <summary>
+            Retrieves a substring of the full string from the specified range.
+            </summary>
+            <param name="offset">Specifies the offset, in characters, from the beginning of the string.
+            An offset of zero indicates copying from the start of the data.</param>
+            <param name="count">Specifies the number of characters to retrieve from the specified offset.</param>
+            <returns>The returned substring.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.AppendChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class. The Comment does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.CloneNode(System.Boolean)">
+            <summary>
+            Clones a new node.
+            </summary>
+            <param name="deep">A flag that indicates whether to recursively clone all nodes
+            that are descendants of this node. If true, this method creates a clone of the
+            complete tree below this node. If false, this method clones this node and its
+            attributes only.</param>
+            <returns>The cloned node.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.HasChildNodes">
+            <summary>
+            Determines whether a node has children. The Comment does not have children.
+            This method always returns false.
+            </summary>
+            <returns>False</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.InsertBefore(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Inserts a child node to the left of the specified node, or at the end of the child node list.
+            This method is not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.Normalize">
+            <summary>
+            Normalizes all descendant elements by combining two or more adjacent text nodes
+            into one unified text node.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.RemoveChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class. The Comment does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.ReplaceChild(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            This method is not applicable to this class. The Comment does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.SelectNodes(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context
+            and returns the list of matching nodes as an XmlNodeList. This method is
+            not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.SelectNodesNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context
+            and returns the list of matching nodes as an XmlNodeList. This method is
+            not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.SelectSingleNode(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context
+            and returns the list of matching nodes as an XmlNodeList. This method is
+            not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.SelectSingleNodeNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context
+            and returns the list of matching nodes as an XmlNodeList. This method is
+            not applicable to this class and will throw an exception.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlComment.GetXml">
+            <summary>
+            Returns the XML representation of the node and all its descendants.
+            </summary>
+            <returns>The XML representation of the node and all its descendants.</returns>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.Data">
+            <summary>
+            Gets or sets the node data depending on the node type.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.Length">
+            <summary>
+            Gets the length of the data, in Unicode characters.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.OwnerDocument">
+            <summary>
+            Returns the root of the document that contains the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.ParentNode">
+            <summary>
+            Gets the parent node of the node instance.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.Attributes">
+            <summary>
+            Gets the list of attributes of this node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.ChildNodes">
+            <summary>
+            Gets a list of children in the current node. This property always returns NULL.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.FirstChild">
+            <summary>
+            Gets the first child node. This property always returns NULL.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.LastChild">
+            <summary>
+            Gets the last child node. This property always returns NULL.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.LocalName">
+            <summary>
+            This method is not applicable to this class. The Comment does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.Prefix">
+            <summary>
+            This method is not applicable to this class. The Comment does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.NamespaceUri">
+            <summary>
+            This method is not applicable to this class. The Comment does not have children.
+            This method will throw an exception.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.NodeName">
+            <summary>
+            Returns the qualified name for attribute, document type, element, entity, or notation nodes.
+            Returns a fixed string for all other node types.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.NodeType">
+            <summary>
+            Gets the XML Document Object Model (DOM) node type, which determines valid values and whether
+            the node can have child nodes.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.NodeValue">
+            <summary>
+            Gets or sets the text associated with the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.NextSibling">
+            <summary>
+            Gets the next sibling of the node in the parent's child list.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlComment.PreviousSibling">
+            <summary>
+            Gets the previous sibling of the node in the parent's child list.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.#ctor">
+            <summary>
+            Creates a new instance of the XmlDocument class.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateAttribute(System.String)">
+            <summary>
+            Creates a new attribute with the specified name.
+            </summary>
+            <param name="name">The name of the new attribute object.
+            This name is subsequently available as the new node's NodeName property.</param>
+            <returns>The newly created attribute.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateAttributeNS(System.Object,System.String)">
+            <summary>
+            Creates a new attribute with the specified namespace and name.
+            </summary>
+            <param name="uri">The name of the desired namespace or a null value if no namespace is desired.</param>
+            <param name="name">The name of the new attribute object.
+            This name is subsequently available as the new node's NodeName property.</param>
+            <returns>The newly created attribute.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateCDataSection(System.String)">
+            <summary>
+            Creates a CDATA section node that contains the supplied data.
+            </summary>
+            <param name="data">The value to be supplied to the new CDATA section object's NodeValue property.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateComment(System.String)">
+            <summary>
+            Creates a comment node that contains the supplied data.
+            </summary>
+            <param name="comment">The value to be supplied to the new comment object's NodeValue.</param>
+            <returns>The newly created comment node.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateDocumentFragment">
+            <summary>
+            Creates an empty XmlDocumentFragment object.
+            </summary>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateElement(System.String)">
+            <summary>
+            Creates an element node using the specified name.
+            </summary>
+            <param name="tagName">The name for the new element node. The string is case-sensitive.
+            This name is subsequently available as the element node's NodeName property.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateElementNS(System.Object,System.String)">
+            <summary>
+            Creates an element node using the specified namespace and name.
+            </summary>
+            <param name="uri">The name of the desired namespace or a null value if no namespace is desired.</param>
+            <param name="tagName">The name for the new element node. It is case-sensitive.
+            This name is subsequently available as the element node's NodeName property.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateEntityReference(System.String)">
+            <summary>
+            Creates a new XmlEntityReference object.
+            </summary>
+            <param name="name">The name of the entity referenced. This name is subsequently available
+            as the new object's NodeName property.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateProcessingInstruction(System.String,System.String)">
+            <summary>
+            Creates a processing instruction node that contains the supplied target and data.
+            </summary>
+            <param name="target">The target part of the processing instruction. It supplies the
+            NodeName property of the new object.</param>
+            <param name="data">The remainder of the processing instruction preceding the closing ?>
+            characters. It supplies the NodeValue property for the new object.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CreateTextNode(System.String)">
+            <summary>
+            Creates a text node that contains the supplied data.
+            </summary>
+            <param name="data">The value to be supplied to the new text object's NodeValue.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.GetElementById(System.String)">
+            <summary>
+            Returns the element that matches the ID attribute.
+            </summary>
+            <param name="elementId">The ID to match.</param>
+            <returns>The element that matches the supplied ID. If no elements match, this method returns Null.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.GetElementsByTagName(System.String)">
+            <summary>
+            Returns a collection of elements that have the specified name.
+            </summary>
+            <param name="tagName">The element name to find. 
+            The value * returns all elements in the document.</param>
+            <returns>The collection of elements that match the specified name.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.ImportNode(PhoneSupportInterfaces.IXmlNode,System.Boolean)">
+            <summary>
+            Imports a node from another document to this document.
+            </summary>
+            <param name="node">The object to be cloned.</param>
+            <param name="deep">If true, any children of node will be cloned as well.
+            If false, no children of the node will be cloned.</param>
+            <returns>The imported node.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.AppendChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Appends a new child node as the last child of the node.
+            </summary>
+            <param name="newNode">The new child node to be appended to the end of the list of children of this node.</param>
+            <returns>The new child node successfully appended to the list. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.CloneNode(System.Boolean)">
+            <summary>
+            Clones a new node. This method is not applicable to this class.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.HasChildNodes">
+            <summary>
+            Determines whether a node has children.
+            </summary>
+            <returns>True if this node has children; otherwise false.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.InsertBefore(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Inserts a child node to the left of the specified node, or at the end of the child node list.
+            </summary>
+            <param name="newChild">The address of the new node to be inserted. The node passed here must
+            be a valid child of the current XML DOM document node. For example, if the current node is an
+            attribute, you cannot pass another attribute in the newChild parameter, because an attribute
+            cannot have an attribute as a child. If newChild is a DOCUMENT_FRAGMENT node type, all its
+            children are inserted in order before referenceChild. If newChild is already in the tree, it
+            is first removed before it is reinserted before the referenceChild node. Read-only nodes,
+            such as NODE_DOCUMENT_TYPE and NODE_ENTITY nodes, cannot be passed in the newChild parameter.</param>
+            <param name="referenceNode">The reference node. The node specified is where the newChild node
+            is to be inserted to the left as the preceding sibling in the child list. The node passed here
+            must be a either a child node of the current node or null. If the value is null, the newChild
+            node is inserted at the end of the child list. If the referenceChild node is not a child of
+            the current node, an error is returned.</param>
+            <returns>On success, the child node that was inserted. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.Normalize">
+            <summary>
+            Normalizes all descendant elements by combining two or more adjacent text nodes into one unified text node.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.RemoveChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Removes the specified child node from the list of children and returns it.
+            </summary>
+            <param name="childNode">The child node to be removed from the list of children of this node.</param>
+            <returns>The removed child node. If null, the childNode object is not removed.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.ReplaceChild(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Replaces the specified old child node with the supplied new child node.
+            </summary>
+            <param name="newChild">The new child that is to replace the old child.
+            If null, the referenceChild parameter is removed without a replacement.</param>
+            <param name="referenceChild">The old child that is to be replaced by the new child.</param>
+            <returns>The old child that is replaced. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.SelectNodes(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns
+            the list of matching nodes as an XmlNodeList.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <returns>The collection of nodes selected by applying the given pattern-matching operation.
+            If no nodes are selected, this method returns an empty collection.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.SelectNodesNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns the list
+            of matching nodes as an XmlNodeList.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <param name="namespaces">Contains a string that specifies namespaces for use in XPath expressions
+            when it is necessary to define new namespaces externally. Namespaces are defined in the XML style,
+            as a space-separated list of namespace declaration attributes. You can use this property to set
+            the default namespace as well.</param>
+            <returns>The collection of nodes selected by applying the given pattern-matching operation.
+            If no nodes are selected, returns an empty collection.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.SelectSingleNode(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns the first matching node.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <returns>The first node that matches the given pattern-matching operation.
+            If no nodes match the expression, the method returns a null value.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.SelectSingleNodeNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns the first matching node.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <param name="namespaces">Contains a string that specifies namespaces for use in XPath expressions
+            when it is necessary to define new namespaces externally. Namespaces are defined in the XML style,
+            as a space-separated list of namespace declaration attributes. You can use this property to set
+            the default namespace as well.</param>
+            <returns>The first node that matches the given pattern-matching operation.
+            If no nodes match the expression, the method returns a null value.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocument.GetXml">
+            <summary>
+            Returns the XML representation of the node and all its descendants.
+            </summary>
+            <returns>The XML representation of the node and all its descendants.</returns>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.Doctype">
+            <summary>
+            For XML, this property gets the address of the node that specifies the DTD.
+            This property returns Null for for HTML documents and XML documents without a DTD.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.DocumentElement">
+            <summary>
+            Gets the root element of the document.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.DocumentUri">
+            <summary>
+            Returns the URL for the last loaded XML document.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.Implementation">
+            <summary>
+            Gets the Implementation object for the document.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.OwnerDocument">
+            <summary>
+            Returns the root of the document that contains the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.ParentNode">
+            <summary>
+            Gets the parent node of the node instance.
+            </summary>
+            <result>This property returns NULL.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.Attributes">
+            <summary>
+            Gets the list of attributes of this node.
+            </summary>
+            <result>This property returns NULL.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.ChildNodes">
+            <summary>
+            Gets a list of children in the current node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.FirstChild">
+            <summary>
+            Gets the first child node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.LastChild">
+            <summary>
+            Gets the last child node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.LocalName">
+            <summary>
+            Gets the local name, which is the local part of a qualified name.
+            This is called the local part in Namespaces in XML.
+            </summary>
+            <result>This property returns NULL.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.Prefix">
+            <summary>
+            This method does nothing on an XmlDocument.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.NamespaceUri">
+            <summary>
+            Returns the Uniform Resource Identifier (URI) for the namespace.
+            </summary>
+            <result>For convenience, returns the NamespaceUri of the document's root element.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.NodeName">
+            <summary>
+            Returns the qualified name for attribute, document type, element, entity, or notation nodes.
+            Returns a fixed string for all other node types.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.NodeType">
+            <summary>
+            Gets the XML Document Object Model (DOM) node type, which determines valid values and
+            whether the node can have child nodes.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.NodeValue">
+            <summary>
+            Gets or sets the text associated with the node. This is a no-op for XmlDocument.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.NextSibling">
+            <summary>
+            Gets the next sibling of the node in the parent's child list. This property is not applicable to this class.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.PreviousSibling">
+            <summary>
+            Gets the previous sibling of the node in the parent's child list. This property is not applicable to this class.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocument.InnerText">
+            <summary>
+            Gets the text from inside the XML.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.AppendChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Appends a new child node as the last child of the node.
+            </summary>
+            <param name="newNode">The new child node to be appended to the end of the list of children of this node.</param>
+            <returns>The new child node successfully appended to the list. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.CloneNode(System.Boolean)">
+            <summary>
+            Clones a new node.
+            </summary>
+            <param name="deep">A flag that indicates whether to recursively clone all nodes that
+            are descendants of this node. If true, this method creates a clone of the complete tree
+            below this node. If false, this method clones this node and its attributes only.</param>
+            <returns>The newly created clone node.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.HasChildNodes">
+            <summary>
+            Determines whether a node has children.
+            </summary>
+            <returns>True if this node has children; otherwise false.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.InsertBefore(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Inserts a child node to the left of the specified node, or at the end of the child node list.
+            </summary>
+            <param name="newChild">The address of the new node to be inserted. The node passed here must
+            be a valid child of the current XML DOM document node. For example, if the current node is an
+            attribute, you cannot pass another attribute in the newChild parameter, because an attribute
+            cannot have an attribute as a child. If newChild is a DOCUMENT_FRAGMENT node type, all its
+            children are inserted in order before referenceChild. If newChild is already in the tree, it
+            is first removed before it is reinserted before the referenceChild node. Read-only nodes,
+            such as NODE_DOCUMENT_TYPE and NODE_ENTITY nodes, cannot be passed in the newChild parameter.</param>
+            <param name="referenceNode">The reference node. The node specified is where the newChild node
+            is to be inserted to the left as the preceding sibling in the child list. The node passed here
+            must be a either a child node of the current node or null. If the value is null, the newChild
+            node is inserted at the end of the child list. If the referenceChild node is not a child of
+            the current node, an error is returned.</param>
+            <returns>On success, the child node that was inserted. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.Normalize">
+            <summary>
+            Normalizes all descendant elements by combining two or more adjacent text nodes into one unified text node.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.RemoveChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Removes the specified child node from the list of children and returns it.
+            </summary>
+            <param name="childNode">The child node to be removed from the list of children of this node.</param>
+            <returns>The removed child node. If null, the childNode object is not removed.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.ReplaceChild(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Replaces the specified old child node with the supplied new child node.
+            </summary>
+            <param name="newChild">The new child that is to replace the old child.
+            If null, the referenceChild parameter is removed without a replacement.</param>
+            <param name="referenceChild">The old child that is to be replaced by the new child.</param>
+            <returns>The old child that is replaced. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.SelectNodes(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns
+            the list of matching nodes as an XmlNodeList.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <returns>The collection of nodes selected by applying the given pattern-matching operation.
+            If no nodes are selected, this method returns an empty collection.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.SelectNodesNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns the list
+            of matching nodes as an XmlNodeList.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <param name="namespaces">Contains a string that specifies namespaces for use in XPath expressions
+            when it is necessary to define new namespaces externally. Namespaces are defined in the XML style,
+            as a space-separated list of namespace declaration attributes. You can use this property to set
+            the default namespace as well.</param>
+            <returns>The collection of nodes selected by applying the given pattern-matching operation.
+            If no nodes are selected, returns an empty collection.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.SelectSingleNode(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns the first matching node.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <returns>The first node that matches the given pattern-matching operation.
+            If no nodes match the expression, the method returns a null value.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.SelectSingleNodeNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns the first matching node.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <param name="namespaces">Contains a string that specifies namespaces for use in XPath expressions
+            when it is necessary to define new namespaces externally. Namespaces are defined in the XML style,
+            as a space-separated list of namespace declaration attributes. You can use this property to set
+            the default namespace as well.</param>
+            <returns>The first node that matches the given pattern-matching operation.
+            If no nodes match the expression, the method returns a null value.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlDocumentFragment.GetXml">
+            <summary>
+            Returns the XML representation of the node and all its descendants.
+            </summary>
+            <returns>The XML representation of the node and all its descendants.</returns>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.OwnerDocument">
+            <summary>
+            Returns the root of the document that contains the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.ParentNode">
+            <summary>
+            Gets the parent node of the node instance.
+            </summary>
+            <result>This property returns NULL.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.Attributes">
+            <summary>
+            Gets the list of attributes of this node.
+            </summary>
+            <result>This property returns NULL.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.ChildNodes">
+            <summary>
+            Gets a list of children in the current node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.FirstChild">
+            <summary>
+            Gets the first child node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.LastChild">
+            <summary>
+            Gets the last child node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.LocalName">
+            <summary>
+            Gets the local name, which is the local part of a qualified name.
+            This is called the local part in Namespaces in XML.
+            </summary>
+            <result>This property returns NULL.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.Prefix">
+            <summary>
+            This method does nothing on an XmlDocumentFragment.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.NamespaceUri">
+            <summary>
+            Returns the Uniform Resource Identifier (URI) for the namespace.
+            </summary>
+            <result>Returns NULL for document fragments.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.NodeName">
+            <summary>
+            Returns the qualified name for attribute, document type, element, entity, or notation nodes.
+            Returns a fixed string for all other node types.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.NodeType">
+            <summary>
+            Gets the XML Document Object Model (DOM) node type, which determines valid values and
+            whether the node can have child nodes.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.NodeValue">
+            <summary>
+            Gets or sets the text associated with the node. This is a no-op for XmlDocument.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.NextSibling">
+            <summary>
+            Gets the next sibling of the node in the parent's child list. This property is not applicable to this class.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.PreviousSibling">
+            <summary>
+            Gets the previous sibling of the node in the parent's child list. This property is not applicable to this class.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlDocumentFragment.InnerText">
+            <summary>
+            Gets the text from inside the XML.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.GetAttribute(System.String)">
+            <summary>
+            Returns the value of the attribute.
+            </summary>
+            <param name="attributeName">The name of the required attribute.</param>
+            <returns>The string value of the attribute.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.GetAttributeNS(System.Object,System.String)">
+            <summary>
+            Returns the value of the attribute.
+            </summary>
+            <param name="namespaceUri">The namespace of the attribute to get.</param>
+            <param name="attributeName">The name of the attribute without the namespace prefix.</param>
+            <returns>The string value of the attribute.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.GetAttributeNode(System.String)">
+            <summary>
+            Returns the attribute node.
+            </summary>
+            <param name="attributeName">The name of the required attribute.</param>
+            <returns>The attribute pointer.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.GetAttributeNodeNS(System.Object,System.String)">
+            <summary>
+            Returns the specified attribute from the specified namespace.
+            </summary>
+            <param name="namespaceUri">The namespace of the attribute to get.</param>
+            <param name="attributeName">The name of the attribute without the namespace prefix.</param>
+            <returns>The returned attribute pointer.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.GetElementsByTagName(System.String)">
+            <summary>
+            Returns a collection of elements that have the specified name.
+            </summary>
+            <param name="tagName">The element name to find. 
+            The value * returns all elements in the document.</param>
+            <returns>The collection of elements that match the specified name.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.RemoveAttribute(System.String)">
+            <summary>
+            Removes or replaces the named attribute.
+            </summary>
+            <param name="attributeName">The name of the attribute to be removed.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.RemoveAttributeNS(System.Object,System.String)">
+            <summary>
+            Removes the specified attribute from this element in the specified namespace.
+            </summary>
+            <param name="namespaceUri">The namespace of attribute to be removed.</param>
+            <param name="attributeName">The name of the attribute without the namespace prefix.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.RemoveAttributeNode(PhoneSupportInterfaces.IXmlAttribute)">
+            <summary>
+            Removes the specified attribute from this element.
+            </summary>
+            <param name="attributeNode">The attribute to be removed.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.SetAttribute(System.String,System.String)">
+            <summary>
+            Sets the value of the named attribute.
+            </summary>
+            <param name="attributeName">The name of the required attribute.</param>
+            <param name="attributeValue">The new value for the attribute.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.SetAttributeNS(System.Object,System.String,System.String)">
+            <summary>
+            Sets the value of the named attribute
+            </summary>
+            <param name="namespaceUri">The namespace of the attribute being set.</param>
+            <param name="attributeName">The name of the attribute being set.</param>
+            <param name="attributeValue">The new value for the attribute.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.SetAttributeNode(PhoneSupportInterfaces.IXmlAttribute)">
+            <summary>
+            Sets or updates the supplied attribute node on this element.
+            </summary>
+            <param name="attributeNode">A pointer to the new attribute.</param>
+            <returns>The returned pointer to the previous attribute (if any) with the same name.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.SetAttributeNodeNS(PhoneSupportInterfaces.IXmlAttribute)">
+            <summary>
+            Sets or updates the supplied attribute node on this element.
+            </summary>
+            <param name="attributeNode">The node to add to the collection.You set the namespace when
+            you create the node using the CreateAttributeNS method.</param>
+            <returns>The returned pointer to the previous attribute (if any) with the same name.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.AppendChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Appends a new child node as the last child of the node.
+            </summary>
+            <param name="newNode">The new child node to be appended to the end of the list of children of this node.</param>
+            <returns>The new child node successfully appended to the list. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.CloneNode(System.Boolean)">
+            <summary>
+            Clones a new node.
+            </summary>
+            <param name="deep">A flag that indicates whether to recursively clone all nodes that are
+            descendants of this node. If true, this method creates a clone of the complete tree below
+            this node. If false, this method clones this node and its attributes only.</param>
+            <returns>The newly created clone node.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.HasChildNodes">
+            <summary>
+            Determines whether a node has children.
+            </summary>
+            <returns>True if this node has children; otherwise false.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.InsertBefore(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Inserts a child node to the left of the specified node, or at the end of the child node list.
+            </summary>
+            <param name="newChild">The address of the new node to be inserted. The node passed here must
+            be a valid child of the current XML DOM document node. For example, if the current node is an
+            attribute, you cannot pass another attribute in the newChild parameter, because an attribute
+            cannot have an attribute as a child. If newChild is a DOCUMENT_FRAGMENT node type, all its
+            children are inserted in order before referenceChild. If newChild is already in the tree, it
+            is first removed before it is reinserted before the referenceChild node. Read-only nodes,
+            such as NODE_DOCUMENT_TYPE and NODE_ENTITY nodes, cannot be passed in the newChild parameter.</param>
+            <param name="referenceNode">The reference node. The node specified is where the newChild node
+            is to be inserted to the left as the preceding sibling in the child list. The node passed here
+            must be a either a child node of the current node or null. If the value is null, the newChild
+            node is inserted at the end of the child list. If the referenceChild node is not a child of
+            the current node, an error is returned.</param>
+            <returns>On success, the child node that was inserted. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.Normalize">
+            <summary>
+            Normalizes all descendant elements by combining two or more adjacent text nodes into one unified text node.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.RemoveChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Removes the specified child node from the list of children and returns it.
+            </summary>
+            <param name="childNode">The child node to be removed from the list of children of this node.</param>
+            <returns>The removed child node. If null, the childNode object is not removed.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.ReplaceChild(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+            Replaces the specified old child node with the supplied new child node.
+            </summary>
+            <param name="newChild">The new child that is to replace the old child.
+            If null, the referenceChild parameter is removed without a replacement.</param>
+            <param name="referenceChild">The old child that is to be replaced by the new child.</param>
+            <returns>The old child that is replaced. If null, no object is created.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.SelectNodes(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns
+            the list of matching nodes as an XmlNodeList.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <returns>The collection of nodes selected by applying the given pattern-matching operation.
+            If no nodes are selected, this method returns an empty collection.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.SelectNodesNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns the list
+            of matching nodes as an XmlNodeList.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <param name="namespaces">Contains a string that specifies namespaces for use in XPath expressions
+            when it is necessary to define new namespaces externally. Namespaces are defined in the XML style,
+            as a space-separated list of namespace declaration attributes. You can use this property to set
+            the default namespace as well.</param>
+            <returns>The collection of nodes selected by applying the given pattern-matching operation.
+            If no nodes are selected, returns an empty collection.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.SelectSingleNode(System.String)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns the first matching node.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <returns>The first node that matches the given pattern-matching operation.
+            If no nodes match the expression, the method returns a null value.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.SelectSingleNodeNS(System.String,System.Object)">
+            <summary>
+            Applies the specified pattern-matching operation to this node's context and returns the first matching node.
+            </summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <param name="namespaces">Contains a string that specifies namespaces for use in XPath expressions
+            when it is necessary to define new namespaces externally. Namespaces are defined in the XML style,
+            as a space-separated list of namespace declaration attributes. You can use this property to set
+            the default namespace as well.</param>
+            <returns>The first node that matches the given pattern-matching operation.
+            If no nodes match the expression, the method returns a null value.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlElement.GetXml">
+            <summary>
+            Returns the XML representation of the node and all its descendants.
+            </summary>
+            <returns>The XML representation of the node and all its descendants.</returns>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.TagName">
+            <summary>
+            Gets the element name.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.OwnerDocument">
+            <summary>
+            Returns the root of the document that contains the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.ParentNode">
+            <summary>
+            Gets the parent node of the node instance.
+            </summary>
+            <result>This property returns NULL.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.Attributes">
+            <summary>
+            Gets the list of attributes of this node.
+            </summary>
+            <result>This property returns NULL.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.ChildNodes">
+            <summary>
+            Gets a list of children in the current node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.FirstChild">
+            <summary>
+            Gets the first child node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.LastChild">
+            <summary>
+            Gets the last child node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.LocalName">
+            <summary>
+            Gets the local name, which is the local part of a qualified name.
+            This is called the local part in Namespaces in XML.
+            </summary>
+            <result>This property returns NULL.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.Prefix">
+            <summary>
+            This method does nothing on an XmlDocument.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.NamespaceUri">
+            <summary>
+            Returns the Uniform Resource Identifier (URI) for the namespace.
+            </summary>
+            <result>For convenience, returns the NamespaceUri of the document's root element.</result>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.NodeName">
+            <summary>
+            Returns the qualified name for attribute, document type, element, entity, or notation nodes.
+            Returns a fixed string for all other node types.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.NodeType">
+            <summary>
+            Gets the XML Document Object Model (DOM) node type, which determines valid values and
+            whether the node can have child nodes.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.NodeValue">
+            <summary>
+            Gets or sets the text associated with the node.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.NextSibling">
+            <summary>
+            Gets the next sibling of the node in the parent's child list. This property is not applicable to this class.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.PreviousSibling">
+            <summary>
+            Gets the previous sibling of the node in the parent's child list. This property is not applicable to this class.
+            </summary>
+        </member>
+        <member name="P:ReadiumPhoneSupport.XmlElement.InnerText">
+            <summary>
+            Gets the text from inside the XML.
+            </summary>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlText.SplitText(System.UInt32)">
+            <summary>
+            Splits this text node into two text nodes at the specified offset and inserts
+            the new text node into the tree as a sibling that immediately follows this node.
+            </summary>
+            <param name="offset">The number of characters at which to split this text node
+            into two nodes, starting from zero.</param>
+            <returns>The new text node.</returns>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlText.AppendData(System.String)">
+            <summary>
+            Appends the supplied string to the existing string data.
+            </summary>
+            <param name="data">The data to be appended to the existing string.</param>
+        </member>
+        <member name="M:ReadiumPhoneSupport.XmlText.DeleteData(System.UInt32,System.UInt32)">
+            <summary>
+            Deletes specified data.
+            </summary>
+            <param name="offset">The offset, in characters, at which to start deleting the string data.</param>
+            <param name="count">The number of characters to delete.</param>
+        </member>
+    </members>
+</doc>

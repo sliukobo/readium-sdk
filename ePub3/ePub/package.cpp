@@ -628,6 +628,18 @@ bool Package::Unpack()
 			if (!found)
 			{
 				HandleError(EPUBError::OPFPackageUniqueIDInvalid, "No matching identifier xml:id found");
+
+				// If some other ID is available, we'll try to create a new ione based on it
+				PropertyPtr _p = PropertyMatching(DCType::Identifier);
+				PropertyPtr p = Property::New(holderPtr);
+				p->SetXMLIdentifier(uniqueIDRef);
+				p->SetDCType(DCType::Identifier);
+				p->SetValue(_p->Value());
+
+				// Remove the old one and add the newly generated unique-identifier
+				RemoveProperty(_p->PropertyIdentifier());
+				AddProperty(p);
+				StoreXMLIdentifiable(p);
 			}
 		}
         

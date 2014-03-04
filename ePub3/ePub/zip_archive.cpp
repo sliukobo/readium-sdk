@@ -171,6 +171,30 @@ protected:
     
 };
 
+const char ZipArchive::HEX2DEC[256] =
+{
+	/*       0  1  2  3   4  5  6  7   8  9  A  B   C  D  E  F */
+	/* 0 */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* 1 */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* 2 */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* 3 */  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, -1, -1, -1, -1, -1, -1,
+
+	/* 4 */ -1, 10, 11, 12, 13, 14, 15, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* 5 */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* 6 */ -1, 10, 11, 12, 13, 14, 15, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* 7 */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+
+	/* 8 */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* 9 */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* A */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* B */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+
+	/* C */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* D */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* E */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+	/* F */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
+};
+
 ZipArchive::ZipItemInfo::ZipItemInfo(struct zip_stat & info)
 {
     SetPath(info.name);
@@ -206,33 +230,33 @@ Archive & ZipArchive::operator = (ZipArchive &&o)
 }
 bool ZipArchive::ContainsItem(const string & path) const
 {
-    return (zip_name_locate(_zip, Sanitized(path).c_str(), 0) >= 0);
+	return (zip_name_locate(_zip, UriDecode(Sanitized(path)).c_str(), 0) >= 0);
 }
 bool ZipArchive::DeleteItem(const string & path)
 {
-    int idx = zip_name_locate(_zip, Sanitized(path).c_str(), 0);
+    int idx = zip_name_locate(_zip, UriDecode(Sanitized(path)).c_str(), 0);
     if ( idx >= 0 )
         return (zip_delete(_zip, idx) >= 0);
     return false;
 }
 bool ZipArchive::CreateFolder(const string & path)
 {
-    return (zip_add_dir(_zip, Sanitized(path).c_str()) >= 0);
+	return (zip_add_dir(_zip, UriDecode(Sanitized(path)).c_str()) >= 0);
 }
 unique_ptr<ByteStream> ZipArchive::ByteStreamAtPath(const string &path) const
 {
-    return make_unique<ZipFileByteStream>(_zip, Sanitized(path));
+	return make_unique<ZipFileByteStream>(_zip, UriDecode(Sanitized(path)).c_str());
 }
 unique_ptr<AsyncByteStream> ZipArchive::AsyncByteStreamAtPath(const string& path) const
 {
-    return make_unique<AsyncZipFileByteStream>(_zip, Sanitized(path));
+	return make_unique<AsyncZipFileByteStream>(_zip, UriDecode(Sanitized(path)).c_str());
 }
 unique_ptr<ArchiveReader> ZipArchive::ReaderAtPath(const string & path) const
 {
     if (_zip == nullptr)
         return nullptr;
     
-    struct zip_file* file = zip_fopen(_zip, Sanitized(path).c_str(), 0);
+	struct zip_file* file = zip_fopen(_zip, UriDecode(Sanitized(path)).c_str(), 0);
     if (file == nullptr)
         return nullptr;
     
@@ -243,11 +267,11 @@ unique_ptr<ArchiveWriter> ZipArchive::WriterAtPath(const string & path, bool com
     if (_zip == nullptr)
         return nullptr;
     
-    int idx = zip_name_locate(_zip, Sanitized(path).c_str(), (create ? ZIP_CREATE : 0));
+	int idx = zip_name_locate(_zip, UriDecode(Sanitized(path)).c_str(), (create ? ZIP_CREATE : 0));
     if (idx == -1)
         return nullptr;
     
-    ZipWriter* writer = new ZipWriter(_zip, Sanitized(path), compressed);
+	ZipWriter* writer = new ZipWriter(_zip, UriDecode(Sanitized(path)), compressed);
     if ( zip_replace(_zip, idx, writer->ZipSource()) == -1 )
     {
         delete writer;
@@ -259,7 +283,7 @@ unique_ptr<ArchiveWriter> ZipArchive::WriterAtPath(const string & path, bool com
 ArchiveItemInfo ZipArchive::InfoAtPath(const string & path) const
 {
     struct zip_stat sbuf;
-    if ( zip_stat(_zip, Sanitized(path).c_str(), 0, &sbuf) < 0 )
+	if (zip_stat(_zip, UriDecode(Sanitized(path)).c_str(), 0, &sbuf) < 0)
         throw std::runtime_error(std::string("zip_stat("+path.stl_str()+") - " + zip_strerror(_zip)));
     return ZipItemInfo(sbuf);
 }
@@ -268,6 +292,47 @@ string ZipArchive::Sanitized(const string& path) const
     if ( path.find('/') == 0 )
         return path.substr(1);
     return path;
+}
+
+string ZipArchive::UriDecode(const string&  path) const
+{
+	// Note from RFC1630: "Sequences which start with a percent
+	// sign but are not followed by two hexadecimal characters
+	// (0-9, A-F) are reserved for future extension"
+
+	const unsigned char * pSrc = (const unsigned char *)path.c_str();
+	const int SRC_LEN = path.length();
+	const unsigned char * const SRC_END = pSrc + SRC_LEN;
+	// last decodable '%' 
+	const unsigned char * const SRC_LAST_DEC = SRC_END - 2;
+
+	char * const pStart = new char[SRC_LEN];
+	char * pEnd = pStart;
+
+	while (pSrc < SRC_LAST_DEC)
+	{
+		if (*pSrc == '%')
+		{
+			char dec1, dec2;
+			if (-1 != (dec1 = HEX2DEC[*(pSrc + 1)])
+				&& -1 != (dec2 = HEX2DEC[*(pSrc + 2)]))
+			{
+				*pEnd++ = (dec1 << 4) + dec2;
+				pSrc += 3;
+				continue;
+			}
+		}
+
+		*pEnd++ = *pSrc++;
+	}
+
+	// the last 2- chars
+	while (pSrc < SRC_END)
+		*pEnd++ = *pSrc++;
+
+	std::string sResult(pStart, pEnd);
+	delete[] pStart;
+	return sResult;
 }
 
 void ZipWriter::DataBlob::Append(const void *data, size_t len)

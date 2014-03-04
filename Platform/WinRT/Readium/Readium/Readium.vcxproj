@@ -809,6 +809,7 @@
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -823,6 +824,10 @@ cscript MakeHeaders.js</Command>
     <PreBuildEvent>
       <Message>Create Canonical Headers</Message>
     </PreBuildEvent>
+    <Xdcmake>
+      <AdditionalDocumentFile>build\$(Platform)\$(Configuration)\Win*.xdc</AdditionalDocumentFile>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -834,6 +839,7 @@ cscript MakeHeaders.js</Command>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -848,6 +854,10 @@ cscript MakeHeaders.js</Command>
     <PreBuildEvent>
       <Message>Create Canonical Headers</Message>
     </PreBuildEvent>
+    <Xdcmake>
+      <AdditionalDocumentFile>build\$(Platform)\$(Configuration)\Win*.xdc</AdditionalDocumentFile>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
@@ -859,6 +869,7 @@ cscript MakeHeaders.js</Command>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -873,6 +884,10 @@ cscript MakeHeaders.js</Command>
     <PreBuildEvent>
       <Message>Create Canonical Headers</Message>
     </PreBuildEvent>
+    <Xdcmake>
+      <AdditionalDocumentFile>build\$(Platform)\$(Configuration)\Win*.xdc</AdditionalDocumentFile>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
@@ -884,6 +899,7 @@ cscript MakeHeaders.js</Command>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -898,6 +914,10 @@ cscript MakeHeaders.js</Command>
     <PreBuildEvent>
       <Message>Create Canonical Headers</Message>
     </PreBuildEvent>
+    <Xdcmake>
+      <AdditionalDocumentFile>build\$(Platform)\$(Configuration)\Win*.xdc</AdditionalDocumentFile>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -909,6 +929,7 @@ cscript MakeHeaders.js</Command>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -923,6 +944,10 @@ cscript MakeHeaders.js</Command>
     <PreBuildEvent>
       <Message>Create Canonical Headers</Message>
     </PreBuildEvent>
+    <Xdcmake>
+      <AdditionalDocumentFile>build\$(Platform)\$(Configuration)\Win*.xdc</AdditionalDocumentFile>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -934,6 +959,7 @@ cscript MakeHeaders.js</Command>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -948,6 +974,10 @@ cscript MakeHeaders.js</Command>
     <PreBuildEvent>
       <Message>Create Canonical Headers</Message>
     </PreBuildEvent>
+    <Xdcmake>
+      <AdditionalDocumentFile>build\$(Platform)\$(Configuration)\Win*.xdc</AdditionalDocumentFile>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

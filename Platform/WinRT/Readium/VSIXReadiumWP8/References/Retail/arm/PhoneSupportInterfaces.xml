@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "PhoneSupportInterfaces"
+    </assembly>
+    <members>
+        <member name="M:PhoneSupportInterfaces.IXmlText.SplitText(System.UInt32)">
+            <summary>
+Splits this text node into two text nodes at the specified offset and inserts the new
+text node into the tree as a sibling that immediately follows this node.
+</summary>
+            <param name="offset">The number of characters at which to split this text node into
+two nodes, starting from zero.</param>
+            <returns>The new text node.</returns>
+        </member>
+        <member name="T:PhoneSupportInterfaces.IXmlText">
+            <summary>
+Represents the text content of an element or attribute.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlCharacterData.Length">
+            <summary>
+Gets the length of the data, in Unicode characters.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlCharacterData.Data">
+            <summary>
+Gets or sets the node data depending on the node type.
+</summary>
+            <result>The node data.</result>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlCharacterData.SubstringData(System.UInt32,System.UInt32)">
+            <summary>
+Retrieves a substring of the full string from the specified range.
+</summary>
+            <param name="offset">Specifies the offset, in characters, from the beginning of the string.
+An offset of zero indicates copying from the start of the data.</param>
+            <param name="count">Specifies the number of characters to retrieve from the specified offset.</param>
+            <returns>The returned substring.</returns>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlCharacterData.ReplaceData(System.UInt32,System.UInt32,System.String)">
+            <summary>
+Replaces the specified number of characters with the supplied string.
+</summary>
+            <param name="offset">The offset, in characters, at which to start replacing string data.</param>
+            <param name="count">The number of characters to replace.</param>
+            <param name="data">The new data that replaces the old string data.</param>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlCharacterData.InsertData(System.UInt32,System.String)">
+            <summary>
+Inserts a string at the specified offset.
+</summary>
+            <param name="offset">The offset, in characters, at which to insert the supplied string data.</param>
+            <param name="data">The data to be inserted into the existing string.</param>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlCharacterData.DeleteData(System.UInt32,System.UInt32)">
+            <summary>
+Deletes specified data.
+</summary>
+            <param name="offset">The offset, in characters, at which to start deleting the string data.</param>
+            <param name="count">The number of characters to delete.</param>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlCharacterData.AppendData(System.String)">
+            <summary>
+Appends the supplied string to the existing string data.
+</summary>
+            <param name="data">The data to be appended to the existing string.</param>
+        </member>
+        <member name="T:PhoneSupportInterfaces.IXmlCharacterData">
+            <summary>
+Provides text manipulation methods that are used by several objects.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.PreviousSibling">
+            <summary>
+Gets the previous sibling of the node in the parent's child list.
+</summary>
+            <result>The left sibling of this node.</result>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.NextSibling">
+            <summary>
+Gets the next sibling of the node in the parent's child list.
+</summary>
+            <result>The right sibling of this node.</result>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.NodeValue">
+            <summary>
+Gets or sets the text associated with the node.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.NodeType">
+            <summary>
+Gets the XML Document Object Model (DOM) node type, which determines valid values and
+whether the node can have child nodes.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.NodeName">
+            <summary>
+Returns the qualified name for attribute, document type, element, entity, or notation nodes.
+Returns a fixed string for all other node types.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.NamespaceUri">
+            <summary>
+Returns the Uniform Resource Identifier (URI) for the namespace.
+</summary>
+            <result>The Uri for the namespace. This refers to the uuu portion of the namespace declaration xmlns:nnn=uuu.</result>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.LocalName">
+            <summary>
+Gets the local name, which is the local part of a qualified name.
+This is called the local part in Namespaces in XML.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.LastChild">
+            <summary>
+Gets the last child node.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.FirstChild">
+            <summary>
+Gets the first child node.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.ChildNodes">
+            <summary>
+Gets a list of children in the current node.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.Attributes">
+            <summary>
+Gets the list of attributes of this node.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.ParentNode">
+            <summary>
+Gets the parent node of the node instance.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.OwnerDocument">
+            <summary>
+Returns the root of the document that contains the node.
+</summary>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNode.ReplaceChild(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+Replaces the specified old child node with the supplied new child node.
+</summary>
+            <param name="newChild">
+The new child that is to replace the old child. If null, the referenceChild parameter
+is removed without a replacement.
+</param>
+            <param name="referenceChild">The old child that is to be replaced by the new child.</param>
+            <returns>The old child that is replaced. If null, no object is created.</returns>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNode.RemoveChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+Removes the specified child node from the list of children and returns it.
+</summary>
+            <param name="childNode">The child node to be removed from the list of children of this node.</param>
+            <returns>The removed child node. If null, the childNode object is not removed.</returns>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNode.Normalize">
+            <summary>
+Normalizes all descendant elements by combining two or more adjacent text nodes
+into one unified text node.
+</summary>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNode.InsertBefore(PhoneSupportInterfaces.IXmlNode,PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+Inserts a child node to the left of the specified node, or at the end of the list.
+</summary>
+            <param name="newChild">
+The address of the new node to be inserted. The node passed here must be a valid
+child of the current XML DOM document node. For example, if the current node is an
+attribute, you cannot pass another attribute in the newChild parameter, because an
+attribute cannot have an attribute as a child. If newChild is a DOCUMENT_FRAGMENT
+node type, all its children are inserted in order before referenceChild. If newChild
+is already in the tree, it is first removed before it is reinserted before the 
+referenceChild node. Read-only nodes, such as NODE_DOCUMENT_TYPE and NODE_ENTITY
+nodes, cannot be passed in the newChild parameter.
+</param>
+            <param name="referenceNode">
+The reference node. The node specified is where the newChild node is to be inserted
+to the left as the preceding sibling in the child list. The node passed here must be
+a either a child node of the current node or null. If the value is null, the newChild
+node is inserted at the end of the child list. If the referenceChild node is not a
+child of the current node, an error is returned.
+</param>
+            <returns>On success, the child node that was inserted. If null, no object is created.</returns>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNode.HasChildNodes">
+            <summary>
+Determines whether a node has children.
+</summary>
+            <returns>True if this node has children; otherwise false.</returns>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNode.CloneNode(System.Boolean)">
+            <summary>
+Clones a new node.
+</summary>
+            <param name="deep">
+A flag that indicates whether to recursively clone all nodes that are descendants of
+this node. If true, this method creates a clone of the complete tree below this node.
+If false, this method clones this node and its attributes only.
+</param>
+            <returns>The newly created clone node.</returns>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNode.AppendChild(PhoneSupportInterfaces.IXmlNode)">
+            <summary>
+Appends a new node as the last child of the node.
+</summary>
+            <param name="newNode">
+The new child node to be appended to the end of the list of children of this node.
+</param>
+            <returns>
+The new child node successfully appended to the list. If null, no object is created.
+</returns>
+        </member>
+        <member name="T:PhoneSupportInterfaces.IXmlNode">
+            <summary>
+Contains information for the entire Document Object Model. This interface represents a single
+node in the document tree. While all objects that implement this interface expose methods for
+dealing with children, not all objects that implement this interface may have children.
+</summary>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNodeSerializer.InnerText">
+            <summary>
+Gets and sets the text from inside the XML.
+</summary>
+            <result>The text from inside the XML. Returns an empty string if there is no text.</result>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNodeSerializer.GetXml">
+            <summary>
+Returns the XML representation of the node and all its descendants.
+</summary>
+            <returns>The XML representation of the node and all its descendants.</returns>
+        </member>
+        <member name="T:PhoneSupportInterfaces.IXmlNodeSerializer">
+            <summary>
+Encapsulates the methods needed to serialize a DOM tree or subtree to a string representation.
+</summary>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNodeSelector.SelectSingleNodeNS(System.String,System.Object)">
+            <summary>
+Applies the specified pattern-matching operation to this node's context and
+returns the first matching node.
+</summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <param name="namespaces">Contains a string that specifies the namespaces to
+use in XPath expressions when it is necessary to define new namespaces externally.
+Namespaces are defined in the XML style, as a space-separated list of namespace
+declaration attributes. You can use this property to set the default namespace
+as well.</param>
+            <returns>The first node that matches the given pattern-matching operation.
+If no nodes match the expression, this method returns a null value.</returns>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNodeSelector.SelectSingleNode(System.String)">
+            <summary>
+Applies the specified pattern-matching operation to this node's context and 
+returns the first matching node.
+</summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <returns>The first node that matches the given pattern-matching operation.
+If no nodes match the expression, the method returns a null value.</returns>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNodeSelector.SelectNodesNS(System.String,System.Object)">
+            <summary>
+Applies the specified pattern-matching operation to this node's context and
+returns the list of matching nodes as an XmlNodeList.
+</summary>
+            <param name="xpath">Specifies an XPath expresssion.</param>
+            <param name="namespaces">Contains a string that specifies namespaces for use 
+in XPath expressions when it is necessary to define new namespaces externally.
+Namespaces are defined in the XML style, as a space-separated list of namespace
+declaration attributes. You can use this property to set the default namespace
+as well.</param>
+            <returns>The collection of nodes selected by applying the given pattern-matching
+operation. If no nodes are selected, returns an empty collection.</returns>
+        </member>
+        <member name="M:PhoneSupportInterfaces.IXmlNodeSelector.SelectNodes(System.String)">
+            <summary>
+Applies the specified pattern-matching operation to this node's context and 
+returns the list of matching nodes as an XmlNodeList.
+</summary>
+            <param name="xpath">Specifies an XPath expression.</param>
+            <returns>
+The collection of nodes selected by applying the given pattern-matching operation.
+If no nodes are selected, this method returns an empty collection.
+</returns>
+        </member>
+        <member name="T:PhoneSupportInterfaces.IXmlNodeSelector">
+            <summary>
+Encapsulates the methods needed to execute XPath queries on an XML DOM tree or subtree.
+</summary>
+        </member>
+        <member name="T:PhoneSupportInterfaces.NodeType">
+            <summary>
+The type of an IXmlNode, as returned by the NodeType property.
+</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.WhitespaceNode">
+            <summary>Non-significant whitespace -- no special node type, may appear as IXmlText</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.SignificantWhitespaceNode">
+            <summary>Significant whitespace -- no special node type, may appear as IXmlText</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.NotationNode">
+            <summary>The node implements IDtdNotation.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.DocumentFragmentNode">
+            <summary>The node implements IXmlDocumentFragment.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.DocumentTypeNode">
+            <summary>The node implements IXmlDocumentType.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.DocumentNode">
+            <summary>The node implements IXmlDocument.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.CommentNode">
+            <summary>The node implements IXmlComment.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.ProcessingInstructionNode">
+            <summary>The node implements IXmlProcessingInstruction.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.EntityNode">
+            <summary>The node implements IDtdEntity.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.EntityReferenceNode">
+            <summary>The node implements IXmlEntityReference.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.CDATANode">
+            <summary>The node implements IXmlCDataSection.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.TextNode">
+            <summary>The node implements IXmlText.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.AttributeNode">
+            <summary>The node implements IXmlAttribute.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.ElementNode">
+            <summary>The node implements IXmlElement.</summary>
+        </member>
+        <member name="F:PhoneSupportInterfaces.NodeType.Invalid">
+            <summary>Default value. Never used by the API.</summary>
+        </member>
+        <!-- Discarding badly formed XML document comment for member 'P:PhoneSupportInterfaces.IXmlNode.Prefix'. -->
+    </members>
+</doc>

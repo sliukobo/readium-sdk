@@ -56,6 +56,22 @@
   <PropertyGroup>
     <GenerateManifest>false</GenerateManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <OutDir>$(SolutionDir)deploy\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <OutDir>$(SolutionDir)deploy\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)deploy\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)deploy\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PreprocessorDefinitions>_WINRT_DLL;BUILDING_EPUB3;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -64,7 +80,8 @@
       </PrecompiledHeaderFile>
       <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\..\Readium\Readium;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,7 +107,8 @@ cscript MakeHeaders.js</Command>
       </PrecompiledHeaderFile>
       <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -101,7 +119,8 @@ cscript MakeHeaders.js</Command>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>cd $(MSBuildProjectDirectory)\..\..</Command>
+      <Command>cd $(MSBuildProjectDirectory)\..\..
+cscript MakeHeaders.js</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Create Canonical Headers</Message>
@@ -115,7 +134,8 @@ cscript MakeHeaders.js</Command>
       </PrecompiledHeaderFile>
       <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +146,8 @@ cscript MakeHeaders.js</Command>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>cd $(MSBuildProjectDirectory)\..\..</Command>
+      <Command>cd $(MSBuildProjectDirectory)\..\..
+cscript MakeHeaders.js</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Create Canonical Headers</Message>
@@ -140,7 +161,8 @@ cscript MakeHeaders.js</Command>
       </PrecompiledHeaderFile>
       <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,7 +173,8 @@ cscript MakeHeaders.js</Command>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>cd $(MSBuildProjectDirectory)\..\..</Command>
+      <Command>cd $(MSBuildProjectDirectory)\..\..
+cscript MakeHeaders.js</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Create Canonical Headers</Message>

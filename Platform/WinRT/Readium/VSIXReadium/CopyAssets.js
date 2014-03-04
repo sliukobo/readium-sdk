@@ -42,7 +42,8 @@ var assets =
     ["\deploy\\ARCHITECTURE\\CONFIGURATION\\Readium\\Readium.exp", "DesignTime\\CONFIGURATION\\ARCHITECTURE\\"],
     ["\deploy\\ARCHITECTURE\\CONFIGURATION\\Readium\\Readium.lib", "DesignTime\\CONFIGURATION\\ARCHITECTURE\\"],
     ["\\deploy\\ARCHITECTURE\\CONFIGURATION\\Readium\\Readium.dll", "Redist\\CONFIGURATION\\ARCHITECTURE\\"],
-    ["\\deploy\\ARCHITECTURE\\CONFIGURATION\\Readium\\Readium.winmd", "References\\CONFIGURATION\\ARCHITECTURE\\"]
+    ["\\deploy\\ARCHITECTURE\\CONFIGURATION\\Readium\\Readium.winmd", "References\\CONFIGURATION\\ARCHITECTURE\\"],
+    ["\\deploy\\ARCHITECTURE\\CONFIGURATION\\Readium\\Readium.xml", "References\\CONFIGURATION\\ARCHITECTURE\\"]
 ]
 
 

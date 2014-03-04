@@ -48,6 +48,7 @@ class ZipArchive : public Archive
     
 private:
     static string TempFilePath();
+	static const char HEX2DEC[256];
     
 public:
     ///
@@ -89,6 +90,9 @@ protected:
     ///
     /// Sanitizes a path string, since `libzip` can be finnicky about them.
     string Sanitized(const string& path) const;
+
+	string UriDecode(const string&  path) const;
+	
 };
 
 EPUB3_END_NAMESPACE
