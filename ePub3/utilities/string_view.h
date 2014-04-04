@@ -258,9 +258,9 @@ public:
         {}
 #if EPUB_COMPILER_SUPPORTS(CXX_DEFAULTED_FUNCTIONS)
     CONSTEXPR
-    basic_string_view(const basic_string_view&) _NOEXCEPT = default;
+    basic_string_view(const basic_string_view&) _NOEXCEPT =default;
     
-    basic_string_view& operator=(const basic_string_view&) _NOEXCEPT = default;
+    basic_string_view& operator=(const basic_string_view&) _NOEXCEPT =default;
 #else
     CONSTEXPR FORCE_INLINE
     basic_string_view(const basic_string_view& __o) _NOEXCEPT

@@ -283,11 +283,11 @@ namespace PhoneSupportInterfaces
 		/// <summary>
 		/// Gets or sets the namespace prefix.
 		/// </summary>
-		/// <result>
+		/// <returns>
 		/// The namespace prefix specified on the element, attribute, or entity reference.
-		/// For example, for the element <xxx:yyy>, this property returns xxx. It returns
+		/// For example, for the element gt;xxx:yyy>, this property returns xxx. It returns
 		/// an empty string, "", if no prefix is specified.
-		/// </result>
+		/// </returns>
 		property String^ Prefix { String^ get(); void set(String^ str); }
 
 		/// <summary>
@@ -316,13 +316,13 @@ namespace PhoneSupportInterfaces
 		/// <summary>
 		/// Gets the next sibling of the node in the parent's child list.
 		/// </summary>
-		/// <result>The right sibling of this node.</result>
+		/// <returns>The right sibling of this node.</returns>
 		property IXmlNode^ NextSibling { IXmlNode^ get(); }
 
 		/// <summary>
 		/// Gets the previous sibling of the node in the parent's child list.
 		/// </summary>
-		/// <result>The left sibling of this node.</result>
+		/// <returns>The left sibling of this node.</returns>
 		property IXmlNode^ PreviousSibling { IXmlNode^ get(); }
 	};
 

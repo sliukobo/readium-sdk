@@ -5,6 +5,6 @@
   MinToolsVersion = "4.0"
   TargetFramework = "WindowsPhone,Version=v8.0"
   SupportedArchitectures="x86;ARM">
-  <File Reference = "ReadiumWP8.winmd" Implementation = "ReadiumWP8.dll" />
+  <File Reference = "Readium.winmd" Implementation = "Readium.dll" />
   <File Reference = "PhoneSupportInterfaces.winmd" Implementation = "PhoneSupportInterfaces.dll" />
 </FileList>

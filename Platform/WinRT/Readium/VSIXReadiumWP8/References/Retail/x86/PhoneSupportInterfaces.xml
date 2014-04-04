@@ -75,13 +75,13 @@ Provides text manipulation methods that are used by several objects.
             <summary>
 Gets the previous sibling of the node in the parent's child list.
 </summary>
-            <result>The left sibling of this node.</result>
+            <returns>The left sibling of this node.</returns>
         </member>
         <member name="P:PhoneSupportInterfaces.IXmlNode.NextSibling">
             <summary>
 Gets the next sibling of the node in the parent's child list.
 </summary>
-            <result>The right sibling of this node.</result>
+            <returns>The right sibling of this node.</returns>
         </member>
         <member name="P:PhoneSupportInterfaces.IXmlNode.NodeValue">
             <summary>
@@ -105,6 +105,16 @@ Returns a fixed string for all other node types.
 Returns the Uniform Resource Identifier (URI) for the namespace.
 </summary>
             <result>The Uri for the namespace. This refers to the uuu portion of the namespace declaration xmlns:nnn=uuu.</result>
+        </member>
+        <member name="P:PhoneSupportInterfaces.IXmlNode.Prefix">
+            <summary>
+Gets or sets the namespace prefix.
+</summary>
+            <returns>
+The namespace prefix specified on the element, attribute, or entity reference.
+For example, for the element gt;xxx:yyy&gt;, this property returns xxx. It returns
+an empty string, "", if no prefix is specified.
+</returns>
         </member>
         <member name="P:PhoneSupportInterfaces.IXmlNode.LocalName">
             <summary>
@@ -344,6 +354,5 @@ The type of an IXmlNode, as returned by the NodeType property.
         <member name="F:PhoneSupportInterfaces.NodeType.Invalid">
             <summary>Default value. Never used by the API.</summary>
         </member>
-        <!-- Discarding badly formed XML document comment for member 'P:PhoneSupportInterfaces.IXmlNode.Prefix'. -->
     </members>
 </doc>

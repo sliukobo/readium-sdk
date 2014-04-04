@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{fd16fec4-aa83-49d5-af95-15addd20c29d}</ProjectGuid>
-    <RootNamespace>ReadiumWP8</RootNamespace>
+    <RootNamespace>Readium</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <WinMDAssembly>true</WinMDAssembly>
@@ -59,18 +59,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <OutDir>$(SolutionDir)deploy\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Readium</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <OutDir>$(SolutionDir)deploy\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Readium</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)deploy\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Readium</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)deploy\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Readium</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -81,7 +85,7 @@
       <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
-      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,6 +94,9 @@
       <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
       <AdditionalLibraryDirectories>$(MSBuildProjectDirectory)\..\Prebuilt\Lib\i386</AdditionalLibraryDirectories>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <WindowsMetadataFile>$(OutDir)Readium.winmd</WindowsMetadataFile>
+      <ProgramDatabaseFile>$(OutDir)Readium.pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(OutDir)Readium.pgd</ProfileGuidedDatabase>
     </Link>
     <PreBuildEvent>
       <Command>cd $(MSBuildProjectDirectory)\..\..
@@ -108,7 +115,7 @@ cscript MakeHeaders.js</Command>
       <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
-      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -117,6 +124,9 @@ cscript MakeHeaders.js</Command>
       <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
       <AdditionalLibraryDirectories>$(MSBuildProjectDirectory)\..\Prebuilt\Lib\i386</AdditionalLibraryDirectories>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <WindowsMetadataFile>$(OutDir)Readium.winmd</WindowsMetadataFile>
+      <ProgramDatabaseFile>$(OutDir)Readium.pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(OutDir)Readium.pgd</ProfileGuidedDatabase>
     </Link>
     <PreBuildEvent>
       <Command>cd $(MSBuildProjectDirectory)\..\..
@@ -135,7 +145,7 @@ cscript MakeHeaders.js</Command>
       <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
-      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,6 +154,9 @@ cscript MakeHeaders.js</Command>
       <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
       <AdditionalLibraryDirectories>$(MSBuildProjectDirectory)\..\Prebuilt\Lib\ARMv7</AdditionalLibraryDirectories>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <WindowsMetadataFile>$(OutDir)Readium.winmd</WindowsMetadataFile>
+      <ProgramDatabaseFile>$(OutDir)Readium.pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(OutDir)Readium.pgd</ProfileGuidedDatabase>
     </Link>
     <PreBuildEvent>
       <Command>cd $(MSBuildProjectDirectory)\..\..
@@ -162,7 +175,7 @@ cscript MakeHeaders.js</Command>
       <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
-      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -171,6 +184,9 @@ cscript MakeHeaders.js</Command>
       <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
       <AdditionalLibraryDirectories>$(MSBuildProjectDirectory)\..\Prebuilt\Lib\ARMv7</AdditionalLibraryDirectories>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <WindowsMetadataFile>$(OutDir)Readium.winmd</WindowsMetadataFile>
+      <ProgramDatabaseFile>$(OutDir)Readium.pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(OutDir)Readium.pgd</ProfileGuidedDatabase>
     </Link>
     <PreBuildEvent>
       <Command>cd $(MSBuildProjectDirectory)\..\..

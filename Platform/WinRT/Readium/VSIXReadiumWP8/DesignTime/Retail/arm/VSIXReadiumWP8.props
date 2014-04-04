@@ -7,7 +7,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <Link>
-      <AdditionalDependencies>ReadiumWP8.lib;PhoneSupportInterfaces.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Readium.lib;PhoneSupportInterfaces.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
 </Project>

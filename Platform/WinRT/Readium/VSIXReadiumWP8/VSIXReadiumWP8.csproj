@@ -170,7 +170,7 @@
     <Content Include="DesignTime\Debug\arm\PhoneSupportInterfaces.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Debug\arm\ReadiumWP8.pdb">
+    <Content Include="DesignTime\Debug\arm\Readium.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Debug\x86\PhoneSupport.pdb">
@@ -179,7 +179,7 @@
     <Content Include="DesignTime\Debug\x86\PhoneSupportInterfaces.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Debug\x86\ReadiumWP8.pdb">
+    <Content Include="DesignTime\Debug\x86\Readium.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Retail\arm\PhoneSupport.pdb">
@@ -188,7 +188,7 @@
     <Content Include="DesignTime\Retail\arm\PhoneSupportInterfaces.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Retail\arm\ReadiumWP8.pdb">
+    <Content Include="DesignTime\Retail\arm\Readium.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Retail\x86\PhoneSupport.pdb">
@@ -197,7 +197,7 @@
     <Content Include="DesignTime\Retail\x86\PhoneSupportInterfaces.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Retail\x86\ReadiumWP8.pdb">
+    <Content Include="DesignTime\Retail\x86\Readium.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Images\readium.png">
@@ -210,7 +210,7 @@
     <Content Include="Redist\Debug\arm\PhoneSupportInterfaces.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Redist\Debug\arm\ReadiumWP8.dll">
+    <Content Include="Redist\Debug\arm\Readium.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Redist\Debug\x86\PhoneSupport.dll">
@@ -219,7 +219,7 @@
     <Content Include="Redist\Debug\x86\PhoneSupportInterfaces.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Redist\Debug\x86\ReadiumWP8.dll">
+    <Content Include="Redist\Debug\x86\Readium.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Redist\Retail\arm\PhoneSupport.dll">
@@ -228,7 +228,7 @@
     <Content Include="Redist\Retail\arm\PhoneSupportInterfaces.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Redist\Retail\arm\ReadiumWP8.dll">
+    <Content Include="Redist\Retail\arm\Readium.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Redist\Retail\x86\PhoneSupport.dll">
@@ -237,7 +237,7 @@
     <Content Include="Redist\Retail\x86\PhoneSupportInterfaces.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Redist\Retail\x86\ReadiumWP8.dll">
+    <Content Include="Redist\Retail\x86\Readium.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Debug\arm\PhoneSupport.XML">
@@ -246,7 +246,7 @@
     <Content Include="References\Debug\arm\PhoneSupportInterfaces.xml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="References\Debug\arm\ReadiumWP8.xml">
+    <Content Include="References\Debug\arm\Readium.xml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Debug\x86\PhoneSupport.XML">
@@ -255,7 +255,7 @@
     <Content Include="References\Debug\x86\PhoneSupportInterfaces.xml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="References\Debug\x86\ReadiumWP8.xml">
+    <Content Include="References\Debug\x86\Readium.xml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Retail\arm\PhoneSupport.XML">
@@ -264,10 +264,16 @@
     <Content Include="References\Retail\arm\PhoneSupportInterfaces.xml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="References\Retail\arm\Readium.xml">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="References\Retail\x86\PhoneSupport.XML">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Retail\x86\PhoneSupportInterfaces.xml">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="References\Retail\x86\Readium.xml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="SDKManifest.xml">
@@ -275,29 +281,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="DesignTime\Debug\x86\VSIXReadiumWP8.props">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="DesignTime\Debug\arm\VSIXReadiumWP8.props">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="DesignTime\Retail\arm\VSIXReadiumWP8.props">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="DesignTime\Retail\x86\VSIXReadiumWP8.props">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="DesignTime\Debug\arm\PhoneSupportInterfaces.exp">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Debug\arm\PhoneSupportInterfaces.lib">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Debug\arm\ReadiumWP8.exp">
+    <Content Include="DesignTime\Debug\arm\Readium.exp">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Debug\arm\ReadiumWP8.lib">
+    <Content Include="DesignTime\Debug\arm\Readium.lib">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="DesignTime\Debug\arm\VSIXReadiumWP8.props">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Debug\x86\PhoneSupportInterfaces.exp">
@@ -306,10 +302,13 @@
     <Content Include="DesignTime\Debug\x86\PhoneSupportInterfaces.lib">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Debug\x86\ReadiumWP8.exp">
+    <Content Include="DesignTime\Debug\x86\Readium.exp">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Debug\x86\ReadiumWP8.lib">
+    <Content Include="DesignTime\Debug\x86\Readium.lib">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="DesignTime\Debug\x86\VSIXReadiumWP8.props">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Retail\arm\PhoneSupportInterfaces.exp">
@@ -318,10 +317,13 @@
     <Content Include="DesignTime\Retail\arm\PhoneSupportInterfaces.lib">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Retail\arm\ReadiumWP8.exp">
+    <Content Include="DesignTime\Retail\arm\Readium.exp">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Retail\arm\ReadiumWP8.lib">
+    <Content Include="DesignTime\Retail\arm\Readium.lib">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="DesignTime\Retail\arm\VSIXReadiumWP8.props">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Retail\x86\PhoneSupportInterfaces.exp">
@@ -330,34 +332,37 @@
     <Content Include="DesignTime\Retail\x86\PhoneSupportInterfaces.lib">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Retail\x86\ReadiumWP8.exp">
+    <Content Include="DesignTime\Retail\x86\Readium.exp">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Retail\x86\ReadiumWP8.lib">
+    <Content Include="DesignTime\Retail\x86\Readium.lib">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="DesignTime\Retail\x86\VSIXReadiumWP8.props">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Debug\arm\PhoneSupportInterfaces.winmd">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="References\Debug\arm\ReadiumWP8.winmd">
+    <Content Include="References\Debug\arm\Readium.winmd">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Debug\x86\PhoneSupportInterfaces.winmd">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="References\Debug\x86\ReadiumWP8.winmd">
+    <Content Include="References\Debug\x86\Readium.winmd">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Retail\arm\PhoneSupportInterfaces.winmd">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="References\Retail\arm\ReadiumWP8.winmd">
+    <Content Include="References\Retail\arm\Readium.winmd">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Retail\x86\PhoneSupportInterfaces.winmd">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="References\Retail\x86\ReadiumWP8.winmd">
+    <Content Include="References\Retail\x86\Readium.winmd">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <None Include="source.extension.vsixmanifest">

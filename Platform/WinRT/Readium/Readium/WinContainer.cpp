@@ -41,21 +41,58 @@ Container::Container(::ePub3::ContainerPtr native) : _native(native)
 {
 	_native->SetBridge(this);
 }
+
 IAsyncOperation<Container^>^ Container::OpenContainerAsync(IStorageFile^ file)
 {
-	return create_async([file]() -> Container^ {
-		auto native = ::ePub3::Container::OpenSynchronouslyForWinRT(StringToNative(file->Path));
-		return Wrapper(native);
-	});
+	try {
+		return create_async([file]() -> Container^ {
+			auto native = ::ePub3::Container::OpenSynchronouslyForWinRT(StringToNative(file->Path));
+			return Wrapper(native);
+		});
+	}
+	catch (std::exception& exc)
+	{
+		throw ref new ::Platform::Exception(E_FAIL, StringFromNative(exc.what()));
+	}
+	catch (...)
+	{
+		throw ref new ::Platform::Exception(E_FAIL, StringFromNative("OpenContainerAsync failed"));
+	}
+
+	return nullptr;
 }
+
 Container^ Container::OpenContainer(IStorageFile^ file)
 {
-	auto native = ::ePub3::Container::OpenSynchronouslyForWinRT(StringToNative(file->Path));
-	return Wrapper(native);
+	try {
+		auto native = ::ePub3::Container::OpenSynchronouslyForWinRT(StringToNative(file->Path));
+		return Wrapper(native);
+	}
+	catch (std::exception& exc)
+	{
+		throw ref new ::Platform::Exception(E_FAIL, StringFromNative(exc.what()));
+	}
+	catch (...)
+	{
+		throw ref new ::Platform::Exception(E_FAIL, StringFromNative("OpenContainerAsync failed"));
+	}
+	return nullptr;
 }
+
 Container^ Container::OpenContainerForContentModule(IStorageFile^ file)
 {
-	return Wrapper(::ePub3::Container::OpenContainerForContentModule(StringToNative(file->Path)));
+	try {
+		return Wrapper(::ePub3::Container::OpenContainerForContentModule(StringToNative(file->Path)));
+	}
+	catch (std::exception& exc)
+	{
+		throw ref new ::Platform::Exception(E_FAIL, StringFromNative(exc.what()));
+	}
+	catch (...)
+	{
+		throw ref new ::Platform::Exception(E_FAIL, StringFromNative("OpenContainerAsync failed"));
+	}
+	return nullptr;
 }
 
 IVectorView<String^>^ Container::PackageLocations()
