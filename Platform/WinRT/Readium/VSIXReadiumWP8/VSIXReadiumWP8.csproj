@@ -164,16 +164,10 @@
     <Content Include="DesignTime\CommonConfiguration\Neutral\Include\WinSpine.h">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Debug\arm\PhoneSupport.pdb">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="DesignTime\Debug\arm\PhoneSupportInterfaces.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Debug\arm\Readium.pdb">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="DesignTime\Debug\x86\PhoneSupport.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Debug\x86\PhoneSupportInterfaces.pdb">
@@ -182,16 +176,10 @@
     <Content Include="DesignTime\Debug\x86\Readium.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Retail\arm\PhoneSupport.pdb">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="DesignTime\Retail\arm\PhoneSupportInterfaces.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Retail\arm\Readium.pdb">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="DesignTime\Retail\x86\PhoneSupport.pdb">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Retail\x86\PhoneSupportInterfaces.pdb">
@@ -204,16 +192,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Redist\Debug\arm\PhoneSupport.dll">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="Redist\Debug\arm\PhoneSupportInterfaces.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Redist\Debug\arm\Readium.dll">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="Redist\Debug\x86\PhoneSupport.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Redist\Debug\x86\PhoneSupportInterfaces.dll">
@@ -222,16 +204,10 @@
     <Content Include="Redist\Debug\x86\Readium.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Redist\Retail\arm\PhoneSupport.dll">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="Redist\Retail\arm\PhoneSupportInterfaces.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Redist\Retail\arm\Readium.dll">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="Redist\Retail\x86\PhoneSupport.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Redist\Retail\x86\PhoneSupportInterfaces.dll">
@@ -240,16 +216,10 @@
     <Content Include="Redist\Retail\x86\Readium.dll">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="References\Debug\arm\PhoneSupport.XML">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="References\Debug\arm\PhoneSupportInterfaces.xml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Debug\arm\Readium.xml">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="References\Debug\x86\PhoneSupport.XML">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Debug\x86\PhoneSupportInterfaces.xml">
@@ -258,16 +228,10 @@
     <Content Include="References\Debug\x86\Readium.xml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="References\Retail\arm\PhoneSupport.XML">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="References\Retail\arm\PhoneSupportInterfaces.xml">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Retail\arm\Readium.xml">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="References\Retail\x86\PhoneSupport.XML">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="References\Retail\x86\PhoneSupportInterfaces.xml">

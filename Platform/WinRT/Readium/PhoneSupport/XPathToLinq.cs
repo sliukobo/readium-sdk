@@ -128,7 +128,7 @@ namespace ReadiumPhoneSupport
             bool more = remainingXPathNodes.MoveNext();
             bool deep = false;
 
-            if (thisXPathNode.Length == 0 && more)
+            if ((thisXPathNode == null || thisXPathNode.Length == 0) && more)
             {
                 deep = true;
                 thisXPathNode = remainingXPathNodes.Current;

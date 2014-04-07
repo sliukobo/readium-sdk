@@ -28,12 +28,6 @@ var configurations =
         ["Release", "Retail"]
     ]
 
-var architecturesPhoneSupport =
-    [
-        ["ARM",     "arm"],
-        ["x86",     "x86"]
-    ]
-
 var architecturesPhoneSupportInterfaces =
     [
         ["ARM", "arm"],
@@ -45,14 +39,6 @@ var architecturesReadiumWP8 =
         ["ARM", "arm"],
         ["Win32", "x86"]
     ]
-
-
-var assetsPhoneSupport =
-[ 
-    ["\\deploy\\ARCHITECTURE\\CONFIGURATION\\PhoneSupport\\PhoneSupport.pdb",    "DesignTime\\CONFIGURATION\\ARCHITECTURE\\"],
-    ["\\deploy\\ARCHITECTURE\\CONFIGURATION\\PhoneSupport\\PhoneSupport.dll",   "Redist\\CONFIGURATION\\ARCHITECTURE\\"],
-    ["\\deploy\\ARCHITECTURE\\CONFIGURATION\\PhoneSupport\\PhoneSupport.xml",   "References\\CONFIGURATION\\ARCHITECTURE\\"]
-]
 
 var assetsPhoneSupportInterfaces =
 [ 
@@ -103,36 +89,6 @@ try {
 
 for (var i in configurations)
 {
-    for (var j in architecturesPhoneSupport)
-    {
-        WScript.Echo("Copying PhoneSupport '" + configurations[i][0] + "' files of '" + architecturesPhoneSupport[j][0] + "' architeture ");
-        for (var k in assetsPhoneSupport)
-        {
-
-            var inPath = fso.BuildPath(deployRoot, assetsPhoneSupport[k][0].replace("ARCHITECTURE", architecturesPhoneSupport[j][0]).replace("CONFIGURATION", configurations[i][0]));
-            var outPath = assetsPhoneSupport[k][1].replace("ARCHITECTURE", architecturesPhoneSupport[j][1]).replace("CONFIGURATION", configurations[i][1]);
-
-            WScript.Echo("Copying '" + inPath + "' to '" + outPath + "'");
-
-            if (!fso.FolderExists(rootFolder + "\\" + outPath)) {
-                var pathElements = outPath.split("\\");
-                var currentPath = rootFolder;
-                for (var l in pathElements) {
-                    currentPath = currentPath + "\\" + pathElements[l];
-                    if (!fso.FolderExists(currentPath)) {
-                        WScript.Echo("Folder Doesn't Exists: '" + currentPath + "'");
-                        fso.CreateFolder(currentPath);
-                    }
-                }
-            }
-
-            try {
-                fso.CopyFile(inPath, outPath, true);
-            } catch (e) {
-                WScript.Echo("Error: '" + e.description + "'");
-            }
-        }
-    }
 
     for (var j in architecturesPhoneSupportInterfaces) {
         WScript.Echo("Copying PhoneSupportInterfaces '" + configurations[i][0] + "' files of '" + architecturesPhoneSupportInterfaces[j][0] + "' architeture ");

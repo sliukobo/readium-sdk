@@ -90,9 +90,10 @@ bool PackageBase::Open(const string& path)
     ArchiveXmlReader reader(_archive->ReaderAtPath(path.stl_str()));
 #if EPUB_USE(LIBXML2)
     _opf = reader.xmlReadDocument(path.c_str(), nullptr, XML_PARSE_RECOVER|XML_PARSE_NOENT|XML_PARSE_DTDATTR);
-#elif EPUB_USE(WIN_XML)
+#elif EPUB_USE(WIN_XML) || EPUB_USE(WIN_PHONE_XML)
 	_opf = reader.ReadDocument(path.c_str(), nullptr, 0);
 #endif
+
     if ( !bool(_opf) )
     {
         HandleError(EPUBError::OCFInvalidRootfileURL, _Str(__PRETTY_FUNCTION__, ": No OPF file at ", path.stl_str()));
