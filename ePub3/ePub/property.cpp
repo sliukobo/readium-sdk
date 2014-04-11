@@ -23,6 +23,17 @@
 #include <ePub3/utilities/iri.h>
 #include <ePub3/property_holder.h>
 
+#if !(EPUB_COMPILER_SUPPORTS(CXX_INITIALIZER_LISTS))
+template<class K, class V>
+struct map_list_of_type {
+	typedef std::map<K, V> Map;
+	Map data;
+	map_list_of_type(K k, V v) { data[k] = v; }
+	map_list_of_type& operator()(K k, V v) { data[k] = v; return *this; }
+	operator Map const&() const { return data; }
+};
+#endif
+
 EPUB3_BEGIN_NAMESPACE
 #if EPUB_USE(LIBXML2)
 const xmlChar * DCMES_uri = (const xmlChar*)"http://purl.org/dc/elements/1.1/";
@@ -112,58 +123,100 @@ typedef std::pair<string, DCType> __to_code_pair;
 typedef std::pair<DCType, string> __to_str_pair;
 typedef std::pair<string, RenditionPropertyBits> __to_rendition_pair;
 
-static __to_code_pair __to_code_pairs[16] = {
-    __to_code_pair("meta", DCType::Custom),
-    __to_code_pair("identifier", DCType::Identifier),
-    __to_code_pair("title", DCType::Title),
-    __to_code_pair("language", DCType::Language),
-    __to_code_pair("contributor", DCType::Contributor),
-    __to_code_pair("coverage", DCType::Coverage),
-    __to_code_pair("creator", DCType::Creator),
-    __to_code_pair("date", DCType::Date),
-    __to_code_pair("description", DCType::Description),
-    __to_code_pair("format", DCType::Format),
-    __to_code_pair("publisher", DCType::Publisher),
-    __to_code_pair("relation", DCType::Relation),
-    __to_code_pair("rights", DCType::Rights),
-    __to_code_pair("source", DCType::Source),
-    __to_code_pair("subject", DCType::Subject),
-    __to_code_pair("type", DCType::Type)
-};
-static std::map<string, DCType> NameToIDMap(&__to_code_pairs[0], &__to_code_pairs[16]);
+//static __to_code_pair __to_code_pairs[16] = {
+//    __to_code_pair("meta", DCType::Custom),
+//    __to_code_pair("identifier", DCType::Identifier),
+//    __to_code_pair("title", DCType::Title),
+//    __to_code_pair("language", DCType::Language),
+//    __to_code_pair("contributor", DCType::Contributor),
+//    __to_code_pair("coverage", DCType::Coverage),
+//    __to_code_pair("creator", DCType::Creator),
+//    __to_code_pair("date", DCType::Date),
+//    __to_code_pair("description", DCType::Description),
+//    __to_code_pair("format", DCType::Format),
+//    __to_code_pair("publisher", DCType::Publisher),
+//    __to_code_pair("relation", DCType::Relation),
+//    __to_code_pair("rights", DCType::Rights),
+//    __to_code_pair("source", DCType::Source),
+//    __to_code_pair("subject", DCType::Subject),
+//    __to_code_pair("type", DCType::Type)
+//};
+//static std::map<string, DCType> NameToIDMap(&__to_code_pairs[0], &__to_code_pairs[16]);
 
-static __to_str_pair __to_str_pairs[16] = {
-    __to_str_pair(DCType::Identifier, "identifier"),
-    __to_str_pair(DCType::Title, "title"),
-    __to_str_pair(DCType::Language, "language"),
-    __to_str_pair(DCType::Contributor, "contributor"),
-    __to_str_pair(DCType::Coverage, "coverage"),
-    __to_str_pair(DCType::Creator, "creator"),
-    __to_str_pair(DCType::Date, "date"),
-    __to_str_pair(DCType::Description, "description"),
-    __to_str_pair(DCType::Format, "format"),
-    __to_str_pair(DCType::Publisher, "publisher"),
-    __to_str_pair(DCType::Relation, "relation"),
-    __to_str_pair(DCType::Rights, "rights"),
-    __to_str_pair(DCType::Source, "source"),
-    __to_str_pair(DCType::Subject, "subject"),
-    __to_str_pair(DCType::Type, "type")
-};
-static std::map<DCType, string> IDToNameMap(&__to_str_pairs[0], &__to_str_pairs[16]);
+static std::map<string, DCType> NameToIDMap = map_list_of_type<string, DCType>("meta", DCType::Custom)
+	("identifier", DCType::Identifier)
+	("title", DCType::Title)
+	("language", DCType::Language)
+	("contributor", DCType::Contributor)
+	("coverage", DCType::Coverage)
+	("creator", DCType::Creator)
+	("date", DCType::Date)
+	("description", DCType::Description)
+	("format", DCType::Format)
+	("publisher", DCType::Publisher)
+	("relation", DCType::Relation)
+	("rights", DCType::Rights)
+	("source", DCType::Source)
+	("subject", DCType::Subject)
+	("type", DCType::Type);
 
-static __to_rendition_pair __to_rendition_pairs[10] = {
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#orientation-landscape", RenditionPropertyBits("orientation", "landscape")),
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#orientation-portrait", RenditionPropertyBits("orientation", "portrait")),
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#orientation-auto", RenditionPropertyBits("orientation", "auto")),
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#layout-reflowable", RenditionPropertyBits("layout", "reflowable")),
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#layout-pre-paginated", RenditionPropertyBits("layout", "pre-paginated")),
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-none", RenditionPropertyBits("spread", "none")),
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-landscape", RenditionPropertyBits("spread", "landscape")),
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-portrait", RenditionPropertyBits("spread", "portrait")),
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-both", RenditionPropertyBits("spread", "both")),
-    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-auto", RenditionPropertyBits("spread", "auto"))
-};
-static std::map<string, RenditionPropertyBits> RenditionSplitPropertyLookup(&__to_rendition_pairs[0], &__to_rendition_pairs[9]);
+//static __to_str_pair __to_str_pairs[16] = {
+//    __to_str_pair(DCType::Identifier, "identifier"),
+//    __to_str_pair(DCType::Title, "title"),
+//    __to_str_pair(DCType::Language, "language"),
+//    __to_str_pair(DCType::Contributor, "contributor"),
+//    __to_str_pair(DCType::Coverage, "coverage"),
+//    __to_str_pair(DCType::Creator, "creator"),
+//    __to_str_pair(DCType::Date, "date"),
+//    __to_str_pair(DCType::Description, "description"),
+//    __to_str_pair(DCType::Format, "format"),
+//    __to_str_pair(DCType::Publisher, "publisher"),
+//    __to_str_pair(DCType::Relation, "relation"),
+//    __to_str_pair(DCType::Rights, "rights"),
+//    __to_str_pair(DCType::Source, "source"),
+//    __to_str_pair(DCType::Subject, "subject"),
+//    __to_str_pair(DCType::Type, "type")
+//};
+// static std::map<DCType, string> IDToNameMap(&__to_str_pairs[0], &__to_str_pairs[16]);
+static std::map<DCType, string> IDToNameMap = map_list_of_type<DCType, string>(DCType::Identifier, "identifier")
+	(DCType::Title, "title")
+	(DCType::Language, "language")
+	(DCType::Contributor, "contributor")
+	(DCType::Coverage, "coverage")
+	(DCType::Creator, "creator")
+	(DCType::Date, "date")
+	(DCType::Description, "description")
+	(DCType::Format, "format")
+	(DCType::Publisher, "publisher")
+	(DCType::Relation, "relation")
+	(DCType::Rights, "rights")
+	(DCType::Source, "source")
+	(DCType::Subject, "subject")
+	(DCType::Type, "type");
+
+//static __to_rendition_pair __to_rendition_pairs[10] = {
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#orientation-landscape", RenditionPropertyBits("orientation", "landscape")),
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#orientation-portrait", RenditionPropertyBits("orientation", "portrait")),
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#orientation-auto", RenditionPropertyBits("orientation", "auto")),
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#layout-reflowable", RenditionPropertyBits("layout", "reflowable")),
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#layout-pre-paginated", RenditionPropertyBits("layout", "pre-paginated")),
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-none", RenditionPropertyBits("spread", "none")),
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-landscape", RenditionPropertyBits("spread", "landscape")),
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-portrait", RenditionPropertyBits("spread", "portrait")),
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-both", RenditionPropertyBits("spread", "both")),
+//    __to_rendition_pair("http://www.idpf.org/vocab/rendition/#spread-auto", RenditionPropertyBits("spread", "auto"))
+//};
+//static std::map<string, RenditionPropertyBits> RenditionSplitPropertyLookup(&__to_rendition_pairs[0], &__to_rendition_pairs[9]);
+static std::map<string, RenditionPropertyBits> RenditionSplitPropertyLookup = map_list_of_type<string, RenditionPropertyBits>("http://www.idpf.org/vocab/rendition/#orientation-landscape", RenditionPropertyBits("orientation", "landscape"))
+	("http://www.idpf.org/vocab/rendition/#orientation-portrait", RenditionPropertyBits("orientation", "portrait"))
+	("http://www.idpf.org/vocab/rendition/#orientation-auto", RenditionPropertyBits("orientation", "auto"))
+	("http://www.idpf.org/vocab/rendition/#layout-reflowable", RenditionPropertyBits("layout", "reflowable"))
+	("http://www.idpf.org/vocab/rendition/#layout-pre-paginated", RenditionPropertyBits("layout", "pre-paginated"))
+	("http://www.idpf.org/vocab/rendition/#spread-none", RenditionPropertyBits("spread", "none"))
+	("http://www.idpf.org/vocab/rendition/#spread-landscape", RenditionPropertyBits("spread", "landscape"))
+	("http://www.idpf.org/vocab/rendition/#spread-portrait", RenditionPropertyBits("spread", "portrait"))
+	("http://www.idpf.org/vocab/rendition/#spread-both", RenditionPropertyBits("spread", "both"))
+	("http://www.idpf.org/vocab/rendition/#spread-auto", RenditionPropertyBits("spread", "auto"));
 #endif
 
 EPUB3_EXPORT

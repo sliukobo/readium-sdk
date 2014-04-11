@@ -14,6 +14,7 @@ using ::Windows::Foundation::Collections::IIterable;
 
 namespace PhoneSupportInterfaces
 {
+
 	public interface class ITransform
 	{
 		property bool CanReuseTransform { bool get(); }
@@ -26,10 +27,12 @@ namespace PhoneSupportInterfaces
 		IBuffer^ TransformFinalBlock(IBuffer^ inputBuffer, int inputOffset, int inputCount);
 	};
 
+
 	public interface class ICryptoEngine : public ITransform
     {
 		bool Initialize(bool encrypt, IBuffer^ iv, IBuffer^ key);
     };
+
 
 	public interface class IHasher : public ITransform
 	{
@@ -46,6 +49,7 @@ namespace PhoneSupportInterfaces
 	/// <summary>
 	/// The type of an IXmlNode, as returned by the NodeType property.
 	/// </summary>
+
 	public enum class NodeType
 	{
 		/// <summary>Default value. Never used by the API.</summary>
@@ -81,18 +85,27 @@ namespace PhoneSupportInterfaces
 	};
 
 	interface class IXmlNodeList;
+
 	interface class IXmlNamedNodeMap;
+
 	interface class IXmlDocument;
+
 	interface class IXmlNode;
+
 	interface class IXmlDocumentFragment;
+
 	interface class IXmlDomImplementation;
+
 	interface class IXmlDocumentType;
+
 	interface class IXmlElement;
+
 	interface class IXmlAttribute;
 
 	/// <summary>
 	/// Encapsulates the methods needed to execute XPath queries on an XML DOM tree or subtree.
 	/// </summary>
+
 	public interface class IXmlNodeSelector
 	{
 		/// <summary>
@@ -147,6 +160,7 @@ namespace PhoneSupportInterfaces
 	/// <summary>
 	/// Encapsulates the methods needed to serialize a DOM tree or subtree to a string representation.
 	/// </summary>
+
 	public interface class IXmlNodeSerializer
 	{
 		/// <summary>
@@ -167,6 +181,7 @@ namespace PhoneSupportInterfaces
 	/// node in the document tree. While all objects that implement this interface expose methods for
 	/// dealing with children, not all objects that implement this interface may have children.
 	/// </summary>
+
 	public interface class IXmlNode : public IXmlNodeSelector, IXmlNodeSerializer
 	{
 		/// <summary>
@@ -326,6 +341,7 @@ namespace PhoneSupportInterfaces
 		property IXmlNode^ PreviousSibling { IXmlNode^ get(); }
 	};
 
+
 	public interface class IDtdEntity : public IXmlNode
 	{
 		property Object^ NotationName { Object^ get(); }
@@ -333,20 +349,24 @@ namespace PhoneSupportInterfaces
 		property Object^ SystemId{ Object^ get(); }
 	};
 
+
 	public interface class IDtdNotation : public IXmlNode
 	{
 		property Object^ PublicId { Object^ get(); }
 		property Object^ SystemId { Object^ get(); }
 	};
 
+
 	public interface class IXmlEntityReference : public IXmlNode
 	{};
+
 
 	public interface class IXmlProcessingInstruction : public IXmlNode
 	{
 		property String^ Data { String^ get(); void set(String^ str); }
 		property String^ Target { String^ get(); }
 	};
+
 
 	public interface class IXmlAttribute : public IXmlNode
 	{
@@ -358,6 +378,7 @@ namespace PhoneSupportInterfaces
 	/// <summary>
 	/// Provides text manipulation methods that are used by several objects.
 	/// </summary>
+
 	public interface class IXmlCharacterData : public IXmlNode
 	{
 		/// <summary>
@@ -412,6 +433,7 @@ namespace PhoneSupportInterfaces
 	/// <summary>
 	/// Represents the text content of an element or attribute.
 	/// </summary>
+
 	public interface class IXmlText : public IXmlCharacterData
 	{
 		/// <summary>
@@ -424,7 +446,9 @@ namespace PhoneSupportInterfaces
 		IXmlText^ SplitText(UINT offset);
 	};
 
+
 	public interface class IXmlCDataSection : public IXmlCharacterData {};
+
 
 	public interface class IXmlElement : public IXmlNode
 	{
@@ -443,11 +467,14 @@ namespace PhoneSupportInterfaces
 		property String^ TagName { String^ get(); }
 	};
 
+
 	public interface class IXmlComment : public IXmlCharacterData
 	{};
 
+
 	public interface class IXmlDocumentFragment : public IXmlNode
 	{};
+
 
 	public interface class IXmlDocumentType : public IXmlNode
 	{
@@ -455,6 +482,7 @@ namespace PhoneSupportInterfaces
 		property String^ Name { String^ get(); }
 		property IXmlNamedNodeMap^ Notations { IXmlNamedNodeMap^ get(); }
 	};
+
 
 	public interface class IXmlLoadSettings
 	{
@@ -464,6 +492,7 @@ namespace PhoneSupportInterfaces
 		property bool ResolveExternals { bool get(); void set(bool val); }
 		property bool ValidateOnParse { bool get(); void set(bool val); }
 	};
+
 
 	public interface class IXmlDocumentIO
 	{
@@ -477,6 +506,7 @@ namespace PhoneSupportInterfaces
 		static IAsyncOperation<XmlDocument> LoadFromUriAsync(Uri uri, XmlLoadSettings loadSettings);
 		* */
 	};
+
 
 	public interface class IXmlDocument : public IXmlNode, public IXmlDocumentIO
 	{
@@ -499,10 +529,12 @@ namespace PhoneSupportInterfaces
 		property IXmlDomImplementation^ Implementation { IXmlDomImplementation^ get(); }
 	};
 
+
 	public interface class IXmlDomImplementation
 	{
 		bool HasFeature(String^ feature, [Windows::Foundation::Metadata::VariantAttribute] Object^ version);
 	};
+
 
 	public interface class IXmlNamedNodeMap : public IVectorView<IXmlNode^>, public IIterable<IXmlNode^>
 	{
@@ -516,17 +548,20 @@ namespace PhoneSupportInterfaces
 		property UINT Length { UINT get(); }
 	};
 
+
 	public interface class IXmlNodeList : public IVectorView<IXmlNode^>, public IIterable<IXmlNode^>
 	{
 		IXmlNode^ Item(UINT index);
 		property UINT Length { UINT get(); }
 	};
 
+
 	public interface class IXmlDocumentFactory
 	{
 		IXmlLoadSettings^ CreateLoadSettings();
 		IXmlDocument^ CreateXmlDocument();
 	};
+
 
 	public interface class ICryptoFactory
 	{
@@ -536,16 +571,18 @@ namespace PhoneSupportInterfaces
 		UINT CreateRandomNumber();
 	};
 
+	[Windows::Foundation::Metadata::WebHostHidden]
 	public ref class FactoryGlue sealed
 	{
 	private:
 		IXmlDocumentFactory^	_xmlFactory;
 		ICryptoFactory^			_cryptoFactory;
+		static FactoryGlue^     _instance;
+		FactoryGlue();
 
 	public:
 		static FactoryGlue^ Singleton();
 
-		FactoryGlue();
 		virtual ~FactoryGlue();
 
 		property IXmlDocumentFactory^ XmlFactory

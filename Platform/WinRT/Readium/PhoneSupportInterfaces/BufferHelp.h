@@ -11,7 +11,6 @@ using ::Windows::Storage::Streams::IBufferByteAccess;
 
 namespace PhoneSupportInterfaces
 {
-
 	class ByteBuffer : public Microsoft::WRL::RuntimeClass<Microsoft::WRL::RuntimeClassFlags<Microsoft::WRL::RuntimeClassType::WinRtClassicComMix>,
 							  ABI::Windows::Storage::Streams::IBuffer, Windows::Storage::Streams::IBufferByteAccess>
 	{

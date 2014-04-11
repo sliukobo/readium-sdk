@@ -86,6 +86,7 @@
       <CompileAsWinRT>true</CompileAsWinRT>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <DisableSpecificWarnings>4635</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -119,6 +120,7 @@ cscript MakeHeaders.js</Command>
       <CompileAsWinRT>true</CompileAsWinRT>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <DisableSpecificWarnings>4635</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,6 +154,8 @@ cscript MakeHeaders.js</Command>
       <CompileAsWinRT>true</CompileAsWinRT>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <AdditionalOptions>/wd4635 %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4635</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -185,6 +189,7 @@ cscript MakeHeaders.js</Command>
       <CompileAsWinRT>true</CompileAsWinRT>
       <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\..\include;$(MSBuildProjectDirectory)\..\..\..\..\ePub3;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\utilities;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ePub;$(MSBuildProjectDirectory)\..\..\..\..\ePub3\ThirdParty;$(MSBuildProjectDirectory)\..\Prebuilt\Include;$(MSBuildProjectDirectory)\..\Readium</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <DisableSpecificWarnings>4635</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

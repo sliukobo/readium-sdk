@@ -6,14 +6,16 @@
 
 using namespace PhoneSupportInterfaces;
 using namespace Platform;
-
-// should be static members of XmlFactoryGlue, but:
-// "error: member of a WinRT class cannot be of a non-WinRT type."
-// ...cunts.
-static std::atomic<PhoneSupportInterfaces::FactoryGlue^>	_singleton(nullptr);
-static std::mutex											_singleton_lock;
+//
+//// should be static members of XmlFactoryGlue, but:
+//// "error: member of a WinRT class cannot be of a non-WinRT type."
+//// ...cunts.
+//static std::atomic<PhoneSupportInterfaces::FactoryGlue^>	_singleton(nullptr);
+//static std::mutex											_singleton_lock;
 
 namespace PhoneSupportInterfaces {
+
+    FactoryGlue^ FactoryGlue::_instance = nullptr;
 
 	FactoryGlue::FactoryGlue()
 		: _xmlFactory(nullptr), _cryptoFactory(nullptr)
@@ -41,23 +43,29 @@ namespace PhoneSupportInterfaces {
 
 	FactoryGlue^ FactoryGlue::Singleton()
 	{
-		// courtesy of "Double-Checked Locking Is Fixed In C++11" by Jeff Preshing,
-		// located at http://preshing.com/20130930/double-cucked-locking-is-fixed-in-cpp11/
-		FactoryGlue^ tmp = _singleton.load(std::memory_order_relaxed);
-		std::atomic_thread_fence(std::memory_order_acquire);
-		if (tmp == nullptr)
-		{
-			std::lock_guard<std::mutex> lock(_singleton_lock);
-			tmp = _singleton.load(std::memory_order_relaxed);
-			if (tmp == nullptr)
-			{
-				tmp = ref new FactoryGlue;
-				std::atomic_thread_fence(std::memory_order_release);
-				_singleton.store(tmp, std::memory_order_relaxed);
-			}
+
+		if (_instance == nullptr) {
+			_instance  = ref new FactoryGlue;
 		}
 
-		return tmp;
+		return _instance;
+		//// courtesy of "Double-Checked Locking Is Fixed In C++11" by Jeff Preshing,
+		//// located at http://preshing.com/20130930/double-cucked-locking-is-fixed-in-cpp11/
+		//FactoryGlue^ tmp = _singleton.load(std::memory_order_relaxed);
+		//std::atomic_thread_fence(std::memory_order_acquire);
+		//if (tmp == nullptr)
+		//{
+		//	std::lock_guard<std::mutex> lock(_singleton_lock);
+		//	tmp = _singleton.load(std::memory_order_relaxed);
+		//	if (tmp == nullptr)
+		//	{
+		//		tmp = ref new FactoryGlue;
+		//		std::atomic_thread_fence(std::memory_order_release);
+		//		_singleton.store(tmp, std::memory_order_relaxed);
+		//	}
+		//}
+
+		//return tmp;
 	}
 
 }
