@@ -94,6 +94,7 @@ bool Container::Open(const string& path)
 	__ns["ocf"] = OCFNamespaceURI;
 	XPathWrangler xpath(_ocf, __ns);
 #endif
+	xpath.NameDefaultNamespace("ocf");
 	xml::NodeSet nodes = xpath.Nodes(gRootfilesXPath);
 
 	if (nodes.empty())
@@ -284,7 +285,7 @@ Container::PathList Container::PackageLocations() const
     __ns["ocf"] = OCFNamespaceURI;
     XPathWrangler xpath(_ocf, __ns);
 #endif
-    
+	xpath.NameDefaultNamespace("ocf");
     PathList output;
     for ( string& str : xpath.Strings(gRootfilePathsXPath) )
     {
@@ -308,7 +309,8 @@ string Container::Version() const
     __ns["ocf"] = OCFNamespaceURI;
     XPathWrangler xpath(_ocf, __ns);
 #endif
-    
+	xpath.NameDefaultNamespace("ocf");
+
     std::vector<string> strings = xpath.Strings(gVersionXPath);
     if ( strings.empty() )
         return "1.0";       // guess
@@ -337,6 +339,7 @@ void Container::LoadEncryption()
     __ns["enc"] = XMLENCNamespaceURI;
     XPathWrangler xpath(enc, __ns);
 #endif
+	xpath.NameDefaultNamespace("ocf");
     xml::NodeSet nodes = xpath.Nodes("/ocf:encryption/enc:EncryptedData");
     if ( nodes.empty() )
     {

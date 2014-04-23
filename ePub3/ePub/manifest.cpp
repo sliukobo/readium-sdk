@@ -258,7 +258,7 @@ shared_ptr<xml::Document> ManifestItem::ReferencedDocument() const
         result = reader->htmlReadDocument(path.c_str(), "utf-8", flags);
     else
         result = reader->xmlReadDocument(path.c_str(), "utf-8", flags);
-#elif EPUB_USE(WIN_XML)
+#elif EPUB_USE(WIN_XML) || EPUB_USE(WIN_PHONE_XML)
 	result = reader->ReadDocument(path.c_str(), "utf-8", 0);
 #endif
     return result;

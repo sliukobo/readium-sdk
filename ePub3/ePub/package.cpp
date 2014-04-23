@@ -239,6 +239,7 @@ NavigationList PackageBase::_LoadEPUB3NavTablesFromManifestItem(PackagePtr share
 #else
 	XPathWrangler::NamespaceList __m;
 	__m["epub"] = ePub3NamespaceURI;
+	__m["html"] = XHTMLNamespaceURI;
 	XPathWrangler xpath(doc, __m);
 #endif
 	xpath.NameDefaultNamespace("html");
