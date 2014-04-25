@@ -257,9 +257,6 @@
     <Content Include="DesignTime\Debug\arm\Readium.lib">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="DesignTime\Debug\arm\VSIXReadiumWP8.props">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="DesignTime\Debug\x86\PhoneSupportInterfaces.exp">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -270,9 +267,6 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Debug\x86\Readium.lib">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="DesignTime\Debug\x86\VSIXReadiumWP8.props">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="DesignTime\Retail\arm\PhoneSupportInterfaces.exp">

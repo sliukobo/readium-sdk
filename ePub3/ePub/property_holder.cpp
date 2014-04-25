@@ -60,13 +60,14 @@ const std::map<const string, bool> PropertyHolder::CoreMediaTypes({
 #else
 typedef PropertyHolder::PropertyVocabularyMap::value_type __vmap_t;
 typedef std::pair<const string, bool> __mtype_t;
-static const __vmap_t __vmap_values[6] = {
+static const __vmap_t __vmap_values[7] = {
     __vmap_t("", "http://idpf.org/epub/vocab/package/#"),
     __vmap_t("dcterms", "http://purl.org/dc/terms/"),
     __vmap_t("marc", "http://id.loc.gov/vocabulary/"),
     __vmap_t("media", "http://www.idpf.org/epub/vocab/overlays/#"),
     __vmap_t("onix", "http://www.editeur.org/ONIX/book/codelists/current.html#"),
-    __vmap_t("xsd", "http://www.w3.org/2001/XMLSchema#")
+    __vmap_t("xsd", "http://www.w3.org/2001/XMLSchema#"),
+    __vmap_t("rendition", "http://www.idpf.org/vocab/rendition/#")
 };
 static const __mtype_t __mtype_values[14] = {
     // Image Types
@@ -91,7 +92,7 @@ static const __mtype_t __mtype_values[14] = {
     __mtype_t("text/css", true),                             // EPUB Style Sheets
     __mtype_t("text/javascript", true)                       // Scripts
 };
-const PropertyHolder::PropertyVocabularyMap PropertyHolder::ReservedVocabularies(&__vmap_values[0], &__vmap_values[6]);
+const PropertyHolder::PropertyVocabularyMap PropertyHolder::ReservedVocabularies(&__vmap_values[0], &__vmap_values[7]);
 const std::map<const string, bool> PropertyHolder::CoreMediaTypes(&__mtype_values[0], &__mtype_values[14]);
 #endif
 
